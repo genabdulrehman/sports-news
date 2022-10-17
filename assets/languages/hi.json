@@ -1,0 +1,67 @@
+{
+
+  "welcome_app": "फुटबॉल अज़ुल में आपका स्वागत है",
+  "welcome_app_2": "फुटबॉल अज़ुल में आपका स्वागत है\nपूरी तरह से फुटबॉल एप्लीकेशन",
+  "get_started": "शुरू हो जाओ",
+
+  "getting_started": "शुरू करना",
+  "create_account": "जारी रखने के लिए एक खाता बनाएँ!",
+  "username": "उपयोगकर्ता नाम",
+  "email": "ईमेल",
+  "already_have_account": "पहले से ही एक खाता है ",
+  "signin": "दाखिल करना",
+  "signup_with": "इसके साथ साइन अप करें",
+
+  "signin_1": "आप पर हस्ताक्षर करें",
+  "signin_2": "वापसी पर स्वागत है! आपको याद किया गया",
+  "dont_have_account": "खाता नहीं है ",
+  "rest_pass": "पासवर्ड भूल गए",
+  "login_with": "साथ प्रवेश करना",
+
+  "help": "चिंता मत करो! हम आपकी मदद कर सकते हैं",
+  "send_pass": "पासवर्ड भेजें",
+
+  "save": "बचा ले",
+  "popular_clubs": "लोकप्रिय क्लब",
+  "popular_clubs_2": "न्यूनतम 5 क्लब चुनें जिन्हें आप फॉलो करना चाहते हैं",
+  "search_club": "खोज क्लब ...",
+
+  "live": "लाइव",
+  "latest_stories": "नवीनतम कहानियाँ",
+  "recent_news": "नवीनतम समाचार",
+
+  "chats": "चैट",
+  "match_stats": "आँकड़े मेल खाता है",
+  "lineup": "पंक्ति बनायें",
+  "commentary": "टीका",
+
+  "full_time": "पूरा समय",
+  "goals": "लक्ष्य",
+  "possession": "अधिकार",
+  "total_shots": "कुल शॉट्स",
+  "shots_target": "लक्ष्य पर निशाना साधो",
+  "yel_cards": "पीले कार्ड",
+  "red_cards": "लाल कार्ड",
+  "tackels": "टैकल",
+  "most_rated": "सबसे रेटेड खिलाड़ी",
+  "subs": "स्थानापन्न खिलाड़ी",
+  "bench": "बेंच",
+  "favor_clubs": "पसंदीदा टीमें",
+
+  "joined": "में शामिल हो गए\n",
+  "mon_ago": "सोम पहले",
+  "language": "भाषा: हिन्दी",
+  "privacy": "गोपनीयता नीति",
+  "rate_app": "एप्प का मूल्यांकन",
+  "share_app": "ऐप शेयर करें",
+  "twitter": "Twitter",
+  "facebook": "Facebook",
+  "instagram": "Instagram",
+  "logout": "लॉग आउट",
+
+  "first_name": "Mouad",
+  "secend_name": "Azul"
+
+
+
+}

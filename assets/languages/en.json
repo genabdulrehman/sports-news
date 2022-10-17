@@ -1,0 +1,67 @@
+{
+
+  "welcome_app": "Welcome to Sportec",
+  "welcome_app_2": "Welcome to Sportec\nFully fledged Football Application",
+  "get_started": "get started",
+
+  "getting_started": "Getting Started",
+  "create_account": "Create an account to continue!",
+  "username": "Username",
+  "email": "Email",
+  "already_have_account": "Already have an account ",
+  "signin": "Sign In",
+  "signup_with": "Sign up with",
+
+  "signin_1": "Let’s sign you In",
+  "signin_2": "Welcome back! You have been missed",
+  "dont_have_account": "Don't have an account ",
+  "rest_pass": "Forgot Password",
+  "login_with": "Log In with",
+
+  "help": "Don't worry! We can help you",
+  "send_pass": "send password",
+
+  "save": "SAVE",
+  "popular_clubs": "Popular Clubs",
+  "popular_clubs_2": "Pick minimum 5 clubs that you want to follow",
+  "search_club": "search club...",
+
+  "live": "Live",
+  "latest_stories": "Latest Stories",
+  "recent_news": "Recent News",
+
+  "chats": "Chats",
+  "match_stats": "Matchs stats",
+  "lineup": "Line Up",
+  "commentary": "Commentary",
+
+  "full_time": "Full Time",
+  "goals": "Goal's",
+  "possession": "Possession",
+  "total_shots": "Total Shots",
+  "shots_target": "Shots on Target",
+  "yel_cards": "Yellow Cards",
+  "red_cards": "Red Cards",
+  "tackels": "Tackles",
+  "most_rated": "MOST RATED PLAYER",
+  "subs": "Substitutes",
+  "bench": "Bench",
+  "favor_clubs": "Favorite teams",
+
+  "joined": "Joined\n",
+  "mon_ago": "mon ago",
+  "language": "Language",
+  "privacy": "Privacy Policy",
+  "rate_app": "Rate App",
+  "share_app": "Share App",
+  "twitter": "Twitter",
+  "facebook": "Facebook",
+  "instagram": "Instagram",
+  "logout": "LogOut",
+
+  "first_name": "Hive",
+  "secend_name": ""
+
+
+
+}

@@ -1,0 +1,67 @@
+{
+
+  "welcome_app": "Bienvenido al futbol azul",
+  "welcome_app_2": "Bienvenidos a Football Azul\nAplicación de fútbol en toda regla",
+  "get_started": "Empezar",
+
+  "getting_started": "Empezando",
+  "create_account": "¡Crea una cuenta para continuar!",
+  "username": "Nombre de usuario",
+  "email": "Correo electrónico",
+  "already_have_account": "Ya tienes una cuenta ",
+  "signin": "Iniciar sesión",
+  "signup_with": "Registrarte con",
+
+  "signin_1": "Vamos a iniciar sesión",
+  "signin_2": "¡Bienvenido de nuevo! Te han extrañado",
+  "dont_have_account": "No tengo una cuenta ",
+  "rest_pass": "Has olvidado tu contraseña",
+  "login_with": "Iniciar con",
+
+  "help": "¡No te preocupes! Te podemos ayudar",
+  "send_pass": "enviar contraseña",
+
+  "save": "AHORRAR",
+  "popular_clubs": "Clubes populares",
+  "popular_clubs_2": "Elige un mínimo de 5 clubes que quieras seguir.",
+  "search_club": "club de búsqueda ...",
+
+  "live": "Vivir",
+  "latest_stories": "Últimas historias",
+  "recent_news": "Noticias recientes",
+
+  "chats": "Chats",
+  "match_stats": "Estadísticas de partidos",
+  "lineup": "Póngase en fila",
+  "commentary": "Comentario",
+
+  "full_time": "Tiempo completo",
+  "goals": "Metas",
+  "possession": "Posesión",
+  "total_shots": "Disparos totales",
+  "shots_target": "Disparos en el blanco",
+  "yel_cards": "Tarjetas amarillas",
+  "red_cards": "Tarjetas rojas",
+  "tackels": "Tackles",
+  "most_rated": "JUGADOR MÁS VALORADO",
+  "subs": "Sustitutos",
+  "bench": "Mesa de trabajo",
+  "favor_clubs": "Equipos favoritos",
+
+  "joined": "Unida\n",
+  "mon_ago": "hace un mes",
+  "language": "Idioma",
+  "privacy": "Política de privacidad",
+  "rate_app": "Calificar aplicacion",
+  "share_app": "Compartir aplicación",
+  "twitter": "Twitter",
+  "facebook": "Facebook",
+  "instagram": "Instagram",
+  "logout": "Cerrar sesión",
+
+  "first_name": "Mouad",
+  "secend_name": "Azul"
+
+
+
+}

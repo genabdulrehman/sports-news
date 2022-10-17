@@ -1,0 +1,67 @@
+{
+
+  "welcome_app": "Bienvenue à Football Azul",
+  "welcome_app_2": "Bienvenue à Football Azul\nApplication de football à part entière",
+  "get_started": "Commencer",
+
+  "getting_started": "Commencer",
+  "create_account": "Créez un compte pour continuer!",
+  "username": "Nom d'utilisateur",
+  "email": "E-mail",
+  "already_have_account": "Vous avez déjà un compte ",
+  "signin": "S'identifier",
+  "signup_with": "Se connecter avec",
+
+  "signin_1": "Laissez-vous connecter",
+  "signin_2": "Content de te revoir! Vous avez manqué",
+  "dont_have_account": "Je n'ai pas de compte ",
+  "rest_pass": "Mot de passe oublié",
+  "login_with": "Connectez-vous avec",
+
+  "help": "Ne t'inquiète pas! Nous pouvons t'aider",
+  "send_pass": "envoyer le mot de passe",
+
+  "save": "SAUVEGARDER",
+  "popular_clubs": "Clubs populaires",
+  "popular_clubs_2": "Choisissez au moins 5 clubs que vous souhaitez suivre",
+  "search_club": "club de recherche ...",
+
+  "live": "Vivre",
+  "latest_stories": "Dernières histoires",
+  "recent_news": "Nouvelles récentes",
+
+  "chats": "Chats",
+  "match_stats": "Statistiques des matchs",
+  "lineup": "S'aligner",
+  "commentary": "Commentaire",
+
+  "full_time": "À plein temps",
+  "goals": "Buts",
+  "possession": "Possession",
+  "total_shots": "Nombre total de coups",
+  "shots_target": "Tire sur la cible",
+  "yel_cards": "Cartons jaunes",
+  "red_cards": "Cartons rouges",
+  "tackels": "Tacles",
+  "most_rated": "JOUEUR LE PLUS NOTÉ",
+  "subs": "Substituts",
+  "bench": "Banc",
+  "favor_clubs": "Équipes préférées",
+
+  "joined": "Rejoint\n",
+  "mon_ago": "il y a un mois",
+  "language": "Langue",
+  "privacy": "Politique de confidentialité",
+  "rate_app": "Application de taux",
+  "share_app": "Partager l'application",
+  "twitter": "Twitter",
+  "facebook": "Facebook",
+  "instagram": "Instagram",
+  "logout": "Se déconnecter",
+
+  "first_name": "Mouad",
+  "secend_name": "Azul"
+
+
+
+}

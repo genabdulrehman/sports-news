@@ -1,0 +1,67 @@
+{
+
+  "welcome_app": "مرحبًا بك في Football Azul",
+  "welcome_app_2": "مرحبًا بك في Football Azul\nتطبيق كرة قدم متكامل",
+  "get_started": "get started",
+
+  "getting_started": "ابدء",
+  "create_account": "قم بإنشاء حساب للمتابعة!",
+  "username": "اسم المستخدم",
+  "email": "بريد إلكتروني",
+  "already_have_account": "هل لديك حساب ",
+  "signin": "تسجيل الدخول",
+  "signup_with": "سجل مع",
+
+  "signin_1": "دعنا نسجل دخولك",
+  "signin_2": "مرحبا بعودتك! لقد افتقدناك",
+  "dont_have_account": "ليس لديك حساب ",
+  "rest_pass": "هل نسيت كلمة السر",
+  "login_with": "تسجيل الدخول مع",
+
+  "help": "لا تقلق! يمكننا مساعدتك",
+  "send_pass": "إرسال كلمة المرور",
+
+  "save": "حفظ",
+  "popular_clubs": "النوادي الشعبية",
+  "popular_clubs_2": "اختر 5 نوادي على الأقل تريد متابعتها",
+  "search_club": "البحث عن النادي ...",
+
+  "live": "مباشر",
+  "latest_stories": "أحدث الأخبار",
+  "recent_news": "Recent News",
+
+  "chats": "الدردشات",
+  "match_stats": "احصائيات المباريات",
+  "lineup": "الخطة",
+  "commentary": "التعليق",
+
+  "full_time": "الوقت كامل",
+  "goals": "الأهداف",
+  "possession": "الإستحواذ",
+  "total_shots": "مجموع الطلقات",
+  "shots_target": "التسديدات على المرمى",
+  "yel_cards": "البطاقات الصفراء",
+  "red_cards": "البطاقات الحمراء",
+  "tackels": "تدخلات",
+  "most_rated": "اللاعب الأكثر تصنيفًا",
+  "subs": "البدائل",
+  "bench": "المقاعد",
+  "favor_clubs": "الفرق المفضلة",
+
+  "joined": "انضم \n",
+  "mon_ago": "منذ أشهر",
+  "language": "الغة",
+  "privacy": "سياسة خاصة",
+  "rate_app": "قيم التطبيق",
+  "share_app": "شارك التطبيق",
+  "twitter": "تويتر",
+  "facebook": "الفيسبوك",
+  "instagram": "انستغرام",
+  "logout": "تسجيلات الخروج",
+
+  "first_name": "معاذ",
+  "secend_name": "أزول"
+
+
+
+}
