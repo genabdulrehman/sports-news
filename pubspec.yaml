@@ -1,7 +1,7 @@
 name: azul_football
 description: A new Flutter application.
 
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 #1.0.4+5
 version: 1.0.0+0
@@ -24,29 +24,25 @@ dependencies:
   flutter_svg: ^0.21.0+1
   flutter_html: any
 
-
   intl: ^0.17.0
   get: ^4.1.3
   provider: ^5.0.0
 
   image_picker: ^0.7.4
   url_launcher: ^6.0.3
-
-
-
-
-
+  carousel_slider: ^1.2.0
+  smooth_page_indicator: ^0.3.0-nullsafety.0
+  flutter_rating_bar: ^1.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
 flutter:
-
   uses-material-design: true
-
 
   assets:
     - assets/images/
+    - assets/shop/
     - assets/languages/
     - assets/images/leagues/
