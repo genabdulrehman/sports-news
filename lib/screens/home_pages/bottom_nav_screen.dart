@@ -1,10 +1,13 @@
+import 'package:azul_football/models/news.dart';
 import 'package:azul_football/screens/home_pages/news.dart';
+import 'package:azul_football/screens/home_pages/shop/shop_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:jumping_bottom_nav_bar/jumping_bottom_nav_bar.dart';
 
 import 'account.dart';
+import 'booking/booking_page.dart';
 import 'events.dart';
 import 'favorites.dart';
 
@@ -12,7 +15,8 @@ class BottomNavScreen extends StatefulWidget {
   final int indexPage;
   final index;
   final Widget screen;
-  BottomNavScreen({this.indexPage, this.screen, this.index});
+  final List<NewsModel> newsData;
+  BottomNavScreen({this.newsData,this.indexPage, this.screen, this.index});
 
   @override
   _BottomNavScreenState createState() => _BottomNavScreenState();
@@ -23,14 +27,7 @@ class _BottomNavScreenState extends State<BottomNavScreen>
   TabController _tabController;
 
   int _indexPage;
-  List<Widget> _listPages = [
-    NewsPage(
-      
-    ),
-    EventsPage(),
-    FavoritesPage(),
-    AccountPage(),
-  ];
+  List<Widget> _listPages = [];
 
   _getPageInstant() {
     if (_indexPage == widget.indexPage) {
@@ -46,8 +43,15 @@ class _BottomNavScreenState extends State<BottomNavScreen>
   @override
   void initState() {
     intIndex = widget.index;
-    _tabController = TabController(length: 4, vsync: this);
-
+    _tabController = TabController(length: 6, vsync: this);
+    _listPages = [
+      NewsPage(newsApi:widget.newsData),
+      BookingPage(),
+      ShopPage(),
+      EventsPage(),
+      FavoritesPage(),
+      AccountPage(),
+    ];
     widget.indexPage != null ? _indexPage = widget.indexPage : _indexPage = 1;
     super.initState();
   }
@@ -117,7 +121,7 @@ class _BottomNavScreenState extends State<BottomNavScreen>
                   TabItemIcon(
                     buildWidget: (_, color) => TabBottomMain(
                       isSelected: _indexPage == 2,
-                      icon: FontAwesomeIcons.futbol,
+                      icon: FontAwesomeIcons.book,
                     ),
                     startColor: theme.backgroundColor,
                     endColor: theme.backgroundColor,
@@ -126,7 +130,7 @@ class _BottomNavScreenState extends State<BottomNavScreen>
                   TabItemIcon(
                     buildWidget: (_, color) => TabBottomMain(
                       isSelected: _indexPage == 3,
-                      icon: FontAwesomeIcons.heart,
+                      icon: FontAwesomeIcons.shopify,
                     ),
                     startColor: theme.backgroundColor,
                     endColor: theme.backgroundColor,
@@ -135,6 +139,24 @@ class _BottomNavScreenState extends State<BottomNavScreen>
                   TabItemIcon(
                     buildWidget: (_, color) => TabBottomMain(
                       isSelected: _indexPage == 4,
+                      icon: FontAwesomeIcons.futbol,
+                    ),
+                    startColor: theme.backgroundColor,
+                    endColor: theme.backgroundColor,
+                    curveColor: theme.backgroundColor,
+                  ),
+                  TabItemIcon(
+                    buildWidget: (_, color) => TabBottomMain(
+                      isSelected: _indexPage == 5,
+                      icon: FontAwesomeIcons.heart,
+                    ),
+                    startColor: theme.backgroundColor,
+                    endColor: theme.backgroundColor,
+                    curveColor: theme.backgroundColor,
+                  ),
+                  TabItemIcon(
+                    buildWidget: (_, color) => TabBottomMain(
+                      isSelected: _indexPage == 6,
                       icon: FontAwesomeIcons.cog,
                     ),
                     startColor: theme.backgroundColor,

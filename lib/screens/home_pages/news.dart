@@ -4,6 +4,7 @@ import 'package:azul_football/api/news_api.dart';
 import 'package:azul_football/helpers/constants.dart';
 
 import 'package:azul_football/localizations/localization_constants.dart';
+import 'package:azul_football/models/news.dart';
 import 'package:azul_football/screens/details/events_details.dart';
 import 'package:azul_football/screens/details/news_details.dart';
 import 'package:azul_football/widgets/trensations_widgets.dart';
@@ -17,8 +18,11 @@ import 'package:get/get.dart';
 import 'bottom_nav_screen.dart';
 
 class NewsPage extends StatefulWidget {
+  final List<NewsModel> newsApi;
   final index;
-  const NewsPage({Key key, this.index}) : super(key: key);
+  const NewsPage({
+    this.newsApi,
+    Key key, this.index}) : super(key: key);
   @override
   _NewsPageState createState() => _NewsPageState();
 }
@@ -107,37 +111,37 @@ class _NewsPageState extends State<NewsPage> {
               },
               scrollDirection: Axis.horizontal,
               children: [
-                for (int i = 0; i < 3; i++)
-                  (indexgame == 0)
-                      ? ShakeTransition(
+                for (int i = 0; i < widget.newsApi.length; i++)
+                  // (indexgame == 0)
+                  //     ? ShakeTransition(
+                  //         duration: Duration(milliseconds: 1600),
+                  //         axis: Axis.horizontal,
+                  //         child: CardRecentNews(
+                  //           title: NewsApi.aListNews[i].title,
+                  //           image: NewsApi.aListNews[i].image,
+                  //           date: NewsApi.aListNews[i].date,
+                  //           category: NewsApi.aListNews[i].category,
+                  //           onTap: () {
+                  //             Get.to(
+                  //               () => BottomNavScreen(
+                  //                 screen: NewsDetails(
+                  //                   id: i,
+                  //                 ),
+                  //                 indexPage: 1,
+                  //               ),
+                  //               transition: Transition.fadeIn,
+                  //             );
+                  //           },
+                  //         ),
+                  //       )
+                       ShakeTransition(
                           duration: Duration(milliseconds: 1600),
                           axis: Axis.horizontal,
                           child: CardRecentNews(
-                            title: NewsApi.aListNews[i].title,
-                            image: NewsApi.aListNews[i].image,
-                            date: NewsApi.aListNews[i].date,
-                            category: NewsApi.aListNews[i].category,
-                            onTap: () {
-                              Get.to(
-                                () => BottomNavScreen(
-                                  screen: NewsDetails(
-                                    id: i,
-                                  ),
-                                  indexPage: 1,
-                                ),
-                                transition: Transition.fadeIn,
-                              );
-                            },
-                          ),
-                        )
-                      : ShakeTransition(
-                          duration: Duration(milliseconds: 1600),
-                          axis: Axis.horizontal,
-                          child: CardRecentNews(
-                            title: NewsApi.aListNewsBasketball[i].title,
-                            image: NewsApi.aListNewsBasketball[i].image,
-                            date: NewsApi.aListNewsBasketball[i].date,
-                            category: NewsApi.aListNewsBasketball[i].category,
+                            title: widget.newsApi[i].title,
+                            image: widget.newsApi[i].image,
+                            date: widget.newsApi[i].date,
+                            category: widget.newsApi[i].category,
                             onTap: () {
                               Get.to(
                                 () => BottomNavScreen(
@@ -158,7 +162,7 @@ class _NewsPageState extends State<NewsPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              for (int i = 0; i < 3; i++)
+              for (int i = 0; i < widget.newsApi.length; i++)
                 ShakeTransition(
                   duration: Duration(milliseconds: 1600),
                   child: AnimatedContainer(
@@ -206,36 +210,36 @@ class _NewsPageState extends State<NewsPage> {
             padding: EdgeInsets.symmetric(horizontal: 10.0),
             child: Column(
               children: [
-                for (int i = 0; i < NewsApi.aListNews.length; i++)
-                  (indexgame == 0)
-                      ? ShakeListTransition(
+                for (int i = 0; i < widget.newsApi.length; i++)
+                  //(indexgame == 0)
+                      // ? ShakeListTransition(
+                      //     duration: Duration(milliseconds: (i + 3) * 300),
+                      //     // axis: Axis.vertical,
+                      //     child: CardLatestNews(
+                      //       category: NewsApi.aListNews[i].category,
+                      //       image: NewsApi.aListNews[i].image,
+                      //       title: NewsApi.aListNews[i].title,
+                      //       onTap: () {
+                      //         //TODO : Open News
+                      //         Get.to(
+                      //           () => BottomNavScreen(
+                      //             screen: NewsDetails(
+                      //               id: i,
+                      //             ),
+                      //             indexPage: 1,
+                      //           ),
+                      //           transition: Transition.fadeIn,
+                      //         );
+                      //       },
+                      //     ),
+                      //   )
+                       ShakeListTransition(
                           duration: Duration(milliseconds: (i + 3) * 300),
                           // axis: Axis.vertical,
                           child: CardLatestNews(
-                            category: NewsApi.aListNews[i].category,
-                            image: NewsApi.aListNews[i].image,
-                            title: NewsApi.aListNews[i].title,
-                            onTap: () {
-                              //TODO : Open News
-                              Get.to(
-                                () => BottomNavScreen(
-                                  screen: NewsDetails(
-                                    id: i,
-                                  ),
-                                  indexPage: 1,
-                                ),
-                                transition: Transition.fadeIn,
-                              );
-                            },
-                          ),
-                        )
-                      : ShakeListTransition(
-                          duration: Duration(milliseconds: (i + 3) * 300),
-                          // axis: Axis.vertical,
-                          child: CardLatestNews(
-                            category: NewsApi.aListNewsBasketball[i].category,
-                            image: NewsApi.aListNewsBasketball[i].image,
-                            title: NewsApi.aListNewsBasketball[i].title,
+                            category: widget.newsApi[i].category,
+                            image: widget.newsApi[i].image,
+                            title: widget.newsApi[i].title,
                             onTap: () {
                               //TODO : Open News
                               Get.to(

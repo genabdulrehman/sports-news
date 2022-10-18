@@ -103,6 +103,114 @@ class NewsApi {
       body: _kBodyNews[4],
     ),
   ];
+
+  static List<NewsModel> aListNewsFootball = [
+    NewsModel(
+      id: '1',
+      date: '1 Day AGO',
+      title:
+      'Kanjuruhan stadium: Indonesia to demolish site of arena disaster',
+      category: 'Football',
+      image:
+      'https://ichef.bbci.co.uk/news/976/cpsprodpb/BDAA/production/_127245584_gettyimages-1429904127.jpg.webp',
+      body: _kBodyNews[0],
+    ),
+    NewsModel(
+      id: '2',
+      date: '22, Mars',
+      title: 'Fatima Reyadh, first woman to coach men’s football team in Bahrain',
+      category: 'Football',
+      image:
+      'https://ichef.bbci.co.uk/onesport/cps/976/cpsprodpb/11CDC/production/_127242927_gettyimages-1341508983.jpg',
+      body: _kBodyNews[1],
+    ),
+    NewsModel(
+      id: '3',
+      date: 'Yesterday',
+      title:
+      'Liverpools Portugal forward Diogo Jota ruled out with calf injury',
+      category: 'Football',
+      image:
+      'https://ichef.bbci.co.uk/onesport/cps/976/cpsprodpb/103A0/production/_127246466_shutterstock_editorial_13464295bg.jpg',
+      body: _kBodyNews[2],
+    ),
+    NewsModel(
+      id: '4',
+      date: '45 minutes',
+      title:
+      'Managers have responsibility to behave on touchline - Frank Lampard',
+      category: 'Football',
+      image:
+      'https://images.immediate.co.uk/production/volatile/sites/3/2022/01/Best-players-world-a653a22.jpg?quality=90&webp=true&resize=1750,1167',
+      body: _kBodyNews[3],
+    ),
+    NewsModel(
+      id: '5',
+      date: '21 MARS',
+      title:
+      'ZION WILLIAMSON TWISTS LEFT ANKLE, SAYS HE’S FINE',
+      category: 'Football',
+      image:
+      'https://www.sportingfree.com/wp-content/uploads/2021/09/Edouard-Mendy-768x510.png',
+      body: _kBodyNews[4],
+    ),
+  ];
+
+  static List<NewsModel> aListNewsCricket = [
+    NewsModel(
+      id: '1',
+      date: '1 Hour AGO',
+      title:
+      "Dushmantha Chameera ruled out of Sri Lanka's Group A decider against Netherlands",
+      category: 'Cricket',
+      image:
+      'https://img1.hscicdn.com/image/upload/f_auto,t_ds_w_1280,q_70/lsci/db/PICTURES/CMS/347700/347773.4.jpg',
+      body: _kBodyNews[0],
+    ),
+    NewsModel(
+      id: '2',
+      date: 'Today',
+      title: 'Daren Sammy returns to Peshawar Zalmi as head coach',
+      category: 'Cricket',
+      image:
+      'https://img1.hscicdn.com/image/upload/f_auto,t_ds_w_1280,q_70/lsci/db/PICTURES/CMS/300800/300878.4.jpg',
+      body: _kBodyNews[1],
+    ),
+    NewsModel(
+      id: '3',
+      date: "4 Hours AGO",
+      title:
+      "India won't travel to Pakistan for 2023 Asia Cup",
+      category: 'Cricket',
+      image:
+      'https://img1.hscicdn.com/image/upload/f_auto,t_ds_w_1280,q_70/lsci/db/PICTURES/CMS/345300/345363.4.jpg',
+      body: _kBodyNews[2],
+    ),
+    NewsModel(
+      id: '4',
+      date: '45 minutes',
+      title:
+      'Liam Livingstone signals World Cup readiness in thumping England warm-up win',
+      category: 'Cricket',
+      image:
+      'https://img1.hscicdn.com/image/upload/f_auto,t_ds_w_1280,q_70/lsci/db/PICTURES/CMS/347700/347730.4.jpg',
+      body: _kBodyNews[3],
+    ),
+    NewsModel(
+      id: '5',
+      date: '20 minutes',
+      title:
+      'The greatest T20 World Cup performance - how the fans have voted',
+      category: 'Cricket',
+      image:
+      'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_1200,q_60/lsci/db/PICTURES/CMS/347600/347607.6.jpg',
+      body: _kBodyNews[4],
+    ),
+  ];
+
+
+
+
   static List<String> _kBodyNews = [
     """
     <div>

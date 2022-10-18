@@ -1,6 +1,11 @@
-import 'package:azul_football/screens/favorites/favorites_clubs.dart';
+import 'package:azul_football/api/booking_api.dart';
+import 'package:azul_football/api/news_api.dart';
+import 'package:azul_football/helpers/colors.dart';
+import 'package:azul_football/screens/home_pages/widgets/booking_card_widget.dart';
 import 'package:azul_football/screens/home_pages/widgets/choose_sport_widget.dart';
+import 'package:azul_football/widgets/trensations_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 
 import 'bottom_nav_screen.dart';
@@ -22,114 +27,149 @@ class _ChooseScreeState extends State<ChooseScree> {
     final double itemHeight = (size.height - kToolbarHeight - 24) / 2;
     final double itemWidth = size.width / 2;
     return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(height: size.height*.2,),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("SPORTS",style: theme.textTheme.headline1,),
-                    Icon(Icons.arrow_forward,color: Colors.teal,)
-                  ],
-                ),
-                SizedBox(height: 20,),
-                GridView.count(
-                  shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
-                  crossAxisCount: 2,
-                  childAspectRatio: (1 / 1.3),
-                  padding: const EdgeInsets.all(0.0),
-                  mainAxisSpacing: 8.0,
-                  crossAxisSpacing: 8.0,
-                  children: [
-                    ChooseSportWidget(
-                      onTap: (){
-                        Get.to(
-                              () => BottomNavScreen(
-                            index: 1,
-                          ),
-                          transition: Transition.fadeIn,
-                        );
-                      },
-                      url: "assets/images/leagues/football.jpeg",
-                      title: "Football",
-                    ),
-                    ChooseSportWidget(
-                      onTap: (){
-                        Get.to(
-                              () => BottomNavScreen(
-                            index: 1,
-                          ),
-                          transition: Transition.fadeIn,
-                        );
-                      },
-                      url: "assets/images/leagues/basketball.jpeg",
-                      title: "Tennis",
-                    ),
-                    ChooseSportWidget(
-                      onTap: (){
-                        Get.to(
-                              () => BottomNavScreen(
-                            index: 1,
-                          ),
-                          transition: Transition.fadeIn,
-                        );
-                      },
-                      url: "assets/images/leagues/football.jpeg",
-                      title: "Cricket",
-                    ),
-                    ChooseSportWidget(
-                      onTap: (){
-                        Get.to(
-                              () => BottomNavScreen(
-                            index: 1,
-                          ),
-                          transition: Transition.fadeIn,
-                        );
-                      },
-                      url: "assets/images/leagues/football.jpeg",
-                      title: "Football",
-                    ),
-                    ChooseSportWidget(
-                      onTap: (){
-                        Get.to(
-                              () => BottomNavScreen(
-                            index: 1,
-                          ),
-                          transition: Transition.fadeIn,
-                        );
-                      },
-                      url: "assets/images/leagues/football.jpeg",
-                      title: "Football",
-                    ),
-                    ChooseSportWidget(
-                      onTap: (){
-                        // Get.to(
-                        //       () => FavoritesClubsScreen(
-                        //     index: 1,
-                        //   ),
-                        //   transition: Transition.fadeIn,
-                        // );
-                        Get.to(
-                              () => BottomNavScreen(
-                            index: 1,
-                          ),
-                          transition: Transition.fadeIn,
-                        );
-                      },
-                      url: "assets/images/leagues/basketball.jpeg",
-                      title: "Tennis",
-                    ),
-                  ],
-                ),
-              ],
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.menu,color: theme.iconTheme.color,),
+        ),
+        title: Text("HOME",style: theme.textTheme.headline3,),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ClipOval(
+              child: Image(image: AssetImage(
+                "assets/images/profile.png"
+              )),
             ),
+          )
+        ],
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: size.width*.05),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: size.height*.03,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("UPCOMING BOOKINGS",style: theme.textTheme.headline1,),
+                  Icon(Icons.arrow_forward,color: Colors.teal,)
+                ],
+              ),
+              SizedBox(height: size.height*.03,),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    for(int i=0; i< BookingApi.upComingData.length ; i++)
+                    ShakeListTransition(
+                      duration: Duration(milliseconds: (i + 3) * 300),
+                      axis: Axis.horizontal,
+                      child: BookingCardWidget(
+                        bookingModel: BookingApi.upComingData[i],
+                        width: MediaQuery.of(context).size.width*.9,
+                        firstColor: kUpcomingEventCardStartColor,
+                        secondColor: kUpcomingEventCardEndColor,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: size.height*.03,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("SPORTS",style: theme.textTheme.headline1,),
+                  Icon(Icons.arrow_forward,color: Colors.teal,)
+                ],
+              ),
+              SizedBox(height: 20,),
+              GridView.count(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                crossAxisCount: 2,
+                childAspectRatio: (1 / 1.3),
+                padding: const EdgeInsets.all(0.0),
+                mainAxisSpacing: 8.0,
+                crossAxisSpacing: 8.0,
+                children: [
+                  ChooseSportWidget(
+                    onTap: (){
+                      Get.to(
+                            () => BottomNavScreen(
+                          index: 1,newsData: NewsApi.aListNewsFootball,
+                        ),
+                        transition: Transition.fadeIn,
+                      );
+                    },
+                    url: "https://media.gettyimages.com/id/1351666177/photo/manchester-united-v-manchester-city-premier-league.webp?s=1024x1024&w=gi&k=20&c=TFoWrG6ruTToZx8vGOJl5Myg_GKKa0vpBMXKkAKdkyc=",
+                    title: "Football",
+                  ),
+                  ChooseSportWidget(
+                    onTap: (){
+                      Get.to(
+                            () => BottomNavScreen(
+                          index: 1, newsData: NewsApi.aListNewsBasketball
+                        ),
+                        transition: Transition.fadeIn,
+                      );
+                    },
+                    url: "https://images.unsplash.com/photo-1579487685737-e435a87b2518?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YmFza2V0YmFsbCUyMHBsYXllcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
+                    title: "Basketball",
+                  ),
+                  ChooseSportWidget(
+                    onTap: (){
+                      Get.to(
+                            () => BottomNavScreen(
+                          index: 1,newsData: NewsApi.aListNewsCricket,
+                        ),
+                        transition: Transition.fadeIn,
+                      );
+                    },
+                    url: "https://img1.hscicdn.com/image/upload/f_auto,t_ds_w_1200,q_50/lsci/db/PICTURES/CMS/347200/347269.jpg",
+                    title: "Cricket",
+                  ),
+                  ChooseSportWidget(
+                    onTap: (){
+                      Get.to(
+                            () => BottomNavScreen(
+                          index: 1,newsData: NewsApi.aListNewsFootball,
+                        ),
+                        transition: Transition.fadeIn,
+                      );
+                    },
+                    url: "https://media.gettyimages.com/id/1351666177/photo/manchester-united-v-manchester-city-premier-league.webp?s=1024x1024&w=gi&k=20&c=TFoWrG6ruTToZx8vGOJl5Myg_GKKa0vpBMXKkAKdkyc=",
+                    title: "Football",
+                  ),
+                  ChooseSportWidget(
+                    onTap: (){
+                      Get.to(
+                            () => BottomNavScreen(
+                            index: 1, newsData: NewsApi.aListNewsBasketball
+                        ),
+                        transition: Transition.fadeIn,
+                      );
+                    },
+                    url: "https://images.unsplash.com/photo-1579487685737-e435a87b2518?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YmFza2V0YmFsbCUyMHBsYXllcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
+                    title: "Basketball",
+                  ),
+                  ChooseSportWidget(
+                    onTap: (){
+                      Get.to(
+                            () => BottomNavScreen(
+                          index: 1,newsData: NewsApi.aListNewsCricket,
+                        ),
+                        transition: Transition.fadeIn,
+                      );
+                    },
+                    url: "https://img1.hscicdn.com/image/upload/f_auto,t_ds_w_1200,q_50/lsci/db/PICTURES/CMS/347200/347269.jpg",
+                    title: "Cricket",
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
       ),

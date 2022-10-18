@@ -18,7 +18,7 @@ class ChooseSportWidget extends StatelessWidget {
             height: MediaQuery.of(context).size.height * .20,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child: Image.asset(
+              child: Image.network(
                 url,
                 fit: BoxFit.fill,
               ),

@@ -12,6 +12,16 @@ Color kBackgroundDarkColor = Color(0xff111111);
 Color kCardLightColor = Color(0xffFFFFFF);
 Color kCardDarkColor = Color(0xff111111);
 
+//choose sports card colors
+Color kSportCardColor1 = Color(0xffd6faba);
+Color kSportCardColor2 = Color(0xffb3f1f1);
+Color kSportCardColor3 = Color(0xffa6d1e1);
+
+//upcoming events card colors
+Color kUpcomingEventCardStartColor = Color(0xffc1fe40);
+Color kUpcomingEventCardEndColor = Color(0xff6fff23);
+
+
 // Unselected Color
 Color kUnselectedLightColor = Color(0xffC5CEE0);
 Color kUnselectedDarkColor = Color(0xffC5CEE0);
