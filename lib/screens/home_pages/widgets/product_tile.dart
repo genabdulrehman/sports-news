@@ -1,17 +1,27 @@
-import 'package:azul_football/screens/home_pages/shop/product_details.dart';
-import 'package:azul_football/screens/home_pages/widgets/regular_text.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:get/get.dart';
 
 import 'package:azul_football/helpers/dimension.dart';
+import 'package:azul_football/screens/home_pages/shop/product_details.dart';
+import 'package:azul_football/screens/home_pages/widgets/regular_text.dart';
 
 class ProductTile extends StatelessWidget {
+  final String name;
+  final String imgUrl;
+  final String price;
+  final String description;
+  final int quanitiy;
   bool big;
 
   ProductTile({
-    this.big,
     ThemeData style,
+    this.name,
+    this.imgUrl,
+    this.price,
+    this.description,
+    this.quanitiy,
+    this.big,
   }) : super();
 
   @override
@@ -29,7 +39,9 @@ class ProductTile extends StatelessWidget {
             child: Container(
               height: big ? 200 : 160,
               width: big ? 150 : 120,
-              decoration: BoxDecoration(color: Colors.blue.withOpacity(.1)),
+              decoration: BoxDecoration(
+                  color: Colors.blue.withOpacity(.1),
+                  borderRadius: BorderRadius.circular(20)),
               child: Stack(
                 children: [
                   Center(
@@ -37,7 +49,7 @@ class ProductTile extends StatelessWidget {
                       height: big ? 120 : 100,
                       width: big ? 150 : 100,
                       child: Image.asset(
-                        "assets/shop/dress.png",
+                        imgUrl,
                         fit: BoxFit.contain,
                       ),
                     ),
@@ -81,7 +93,7 @@ class ProductTile extends StatelessWidget {
           Align(
             alignment: Alignment.topLeft,
             child: RegularText(
-              text: "Nike Shoes",
+              text: name,
               color: Colors.black,
               size: Dimensions.font16,
             ),
@@ -92,7 +104,7 @@ class ProductTile extends StatelessWidget {
           Align(
             alignment: Alignment.topLeft,
             child: RegularText(
-              text: "100.4\$",
+              text: "${price}\$",
               color: Colors.black,
               size: Dimensions.font16,
             ),

@@ -16,9 +16,9 @@ class ProdcutDetailScreen extends StatefulWidget {
 class _ProdcutDetailScreenState extends State<ProdcutDetailScreen> {
   final _pageController = PageController();
   List<String> _reviewImageSource = [
-    'assets/shop/fasion.jpeg',
-    'assets/shop/fasion2.jpeg',
-    'assets/shop/fasion3.jpeg',
+    'assets/shop/sports1.jpeg',
+    'assets/shop/sports2.jpeg',
+    'assets/shop/sports3.jpeg',
   ];
   List<String> _reviewerName = ['Alina Baig', 'Javed ali'];
   List<String> _reviewerDesc = [
@@ -32,9 +32,9 @@ class _ProdcutDetailScreenState extends State<ProdcutDetailScreen> {
   ];
 
   List<String> _reviewerSamplePhoto = [
-    'assets/shop/fasion.jpeg',
-    'assets/shop/fasion2.jpeg',
-    'assets/shop/fasion3.jpeg',
+    'assets/shop/sports1.jpeg',
+    'assets/shop/sports2.jpeg',
+    'assets/shop/sports3.jpeg',
   ];
 
   @override
@@ -77,7 +77,7 @@ class _ProdcutDetailScreenState extends State<ProdcutDetailScreen> {
                   height: Dimensions.screenHeight / 2,
                   width: Dimensions.screenWidth - 5,
                   child: Image.asset(
-                    "assets/shop/fasion.jpeg",
+                    "assets/shop/sports1.jpeg",
                     fit: BoxFit.fitHeight,
                   ),
                 ),
@@ -85,7 +85,7 @@ class _ProdcutDetailScreenState extends State<ProdcutDetailScreen> {
                   height: Dimensions.screenHeight / 2,
                   width: Dimensions.screenWidth - 5,
                   child: Image.asset(
-                    "assets/shop/fasion2.jpeg",
+                    "assets/shop/sports2.jpeg",
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -93,7 +93,7 @@ class _ProdcutDetailScreenState extends State<ProdcutDetailScreen> {
                   height: Dimensions.screenHeight / 2,
                   width: Dimensions.screenWidth - 5,
                   child: Image.asset(
-                    "assets/shop/fasion.jpeg",
+                    "assets/shop/sports3.jpeg",
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -265,7 +265,7 @@ class _ProdcutDetailScreenState extends State<ProdcutDetailScreen> {
           ),
           Padding(
             padding: const EdgeInsets.only(left: 20, right: 20),
-            child: CustomButton(title: "Add to Cart", clickFuction: () {}),
+            child: CustomButton(title: "Buy", clickFuction: () {}),
           ),
           SizedBox(
             height: Dimensions.height25,
