@@ -52,8 +52,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     duration: Duration(milliseconds: 1800),
                     child: Align(
                       alignment: Alignment.centerRight,
-                      child: SvgPicture.asset(
-                        'assets/images/intro_2.svg',
+                      child: Image.asset(
+                        'assets/shop/basketball.png',
                         height: mSize.height / 4,
                       ),
                     ),

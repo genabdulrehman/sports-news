@@ -1,13 +1,19 @@
-import 'package:azul_football/helpers/dimension.dart';
-import 'package:azul_football/screens/home_pages/widgets/custom_button.dart';
+import 'package:azul_football/api/product_api.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
+import 'package:azul_football/helpers/dimension.dart';
+import 'package:azul_football/screens/home_pages/widgets/custom_button.dart';
+
 import '../widgets/regular_text.dart';
 
 class ProdcutDetailScreen extends StatefulWidget {
-  const ProdcutDetailScreen() : super();
+  final int index;
+  const ProdcutDetailScreen({
+    Key key,
+    this.index,
+  }) : super();
 
   @override
   State<ProdcutDetailScreen> createState() => _ProdcutDetailScreenState();
@@ -39,6 +45,7 @@ class _ProdcutDetailScreenState extends State<ProdcutDetailScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Scaffold(
       // appBar: AppBar(
       //   backgroundColor: Colors.white,
@@ -66,214 +73,221 @@ class _ProdcutDetailScreenState extends State<ProdcutDetailScreen> {
       //   ],
       // ),
       body: SingleChildScrollView(
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Container(
-            height: Dimensions.screenHeight / 2,
-            width: Dimensions.screenWidth,
-            child: PageView(
-              controller: _pageController,
-              children: [
-                Container(
-                  height: Dimensions.screenHeight / 2,
-                  width: Dimensions.screenWidth - 5,
-                  child: Image.asset(
-                    "assets/shop/sports1.jpeg",
-                    fit: BoxFit.fitHeight,
+        child: Padding(
+          padding: const EdgeInsets.only(left: 15, right: 15),
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Container(
+              height: Dimensions.screenHeight / 2,
+              width: Dimensions.screenWidth,
+              child: PageView(
+                controller: _pageController,
+                children: [
+                  Container(
+                    height: Dimensions.screenHeight / 2,
+                    width: Dimensions.screenWidth - 5,
+                    child: Image.asset(
+                        ProductApi.productList[widget.index].imgUrl,
+                        fit: BoxFit.contain),
                   ),
-                ),
-                Container(
-                  height: Dimensions.screenHeight / 2,
-                  width: Dimensions.screenWidth - 5,
-                  child: Image.asset(
-                    "assets/shop/sports2.jpeg",
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                Container(
-                  height: Dimensions.screenHeight / 2,
-                  width: Dimensions.screenWidth - 5,
-                  child: Image.asset(
-                    "assets/shop/sports3.jpeg",
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(
-            height: Dimensions.height15,
-          ),
-          Center(
-            child: SmoothPageIndicator(
-              controller: _pageController,
-              count: 3,
-              effect: ExpandingDotsEffect(
-                activeDotColor: Colors.black,
-                dotHeight: Dimensions.width10 - 2,
-                dotWidth: Dimensions.width10 - 2,
+                  // Container(
+                  //   height: Dimensions.screenHeight / 2,
+                  //   width: Dimensions.screenWidth - 5,
+                  //   child: Image.asset(
+                  //     "assets/shop/sports2.jpeg",
+                  //     fit: BoxFit.cover,
+                  //   ),
+                  // ),
+                  // Container(
+                  //   height: Dimensions.screenHeight / 2,
+                  //   width: Dimensions.screenWidth - 5,
+                  //   child: Image.asset(
+                  //     "assets/shop/sports3.jpeg",
+                  //     fit: BoxFit.cover,
+                  //   ),
+                  // ),
+                ],
               ),
             ),
-          ),
-          SizedBox(
-            height: Dimensions.height15,
-          ),
-          Divider(),
-          SizedBox(
-            height: Dimensions.height15,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 10, right: 10),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                RegularText(
-                  text: "Fasion Cloth",
-                  // size: 20,
-                ),
-                Container(
-                  height: 40,
-                  width: 40,
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(color: Colors.transparent)),
-                  child: Icon(Icons.favorite_outline,
-                      size: 18, color: Colors.transparent),
-                )
-              ],
+            SizedBox(
+              height: Dimensions.height15,
             ),
-          ),
-          SizedBox(
-            height: Dimensions.height5,
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 10, right: 10),
-            child: Row(
+            Center(
+              child: SmoothPageIndicator(
+                controller: _pageController,
+                count: 3,
+                effect: ExpandingDotsEffect(
+                  activeDotColor: Colors.black,
+                  dotHeight: Dimensions.width10 - 2,
+                  dotWidth: Dimensions.width10 - 2,
+                ),
+              ),
+            ),
+            SizedBox(
+              height: Dimensions.height15,
+            ),
+            Divider(),
+            SizedBox(
+              height: Dimensions.height15,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 10, right: 10),
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   RegularText(
-                    text: "100.4\$",
-                    color: Colors.black,
-                    size: Dimensions.font16,
+                    text: ProductApi.productList[widget.index].name,
+                    style: theme.textTheme.headline3,
+                    // size: 20,
                   ),
                   Container(
-                    height: 20,
-                    width: 100,
+                    height: 40,
+                    width: 40,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        border: Border.all(color: Colors.grey.withOpacity(.2))),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 5, right: 5),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Icon(
-                            Icons.remove,
-                            size: 18,
-                          ),
-                          Container(
-                            height: 20,
-                            width: 20,
-                            child: RegularText(
-                              text: "1",
-                              color: Colors.black,
-                              size: Dimensions.font16,
-                            ),
-                          ),
-                          Icon(
-                            Icons.add,
-                            size: 18,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ]),
-          ),
-          Padding(
-            padding: EdgeInsets.all(10),
-            child: Align(
-              alignment: Alignment.topLeft,
-              child: RegularText(
-                text: "Size",
-                color: Colors.black,
-                size: Dimensions.font18,
+                        shape: BoxShape.circle,
+                        border: Border.all(color: Colors.transparent)),
+                    child: Icon(Icons.favorite_outline,
+                        size: 18, color: Colors.transparent),
+                  )
+                ],
               ),
             ),
-          ),
-          SizedBox(
-            height: Dimensions.height15,
-          ),
-          Center(
-            child: Container(
-              height: 50,
-              width: Dimensions.screenWidth * 0.8,
-              child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 5,
-                  itemBuilder: ((context, index) {
-                    List<String> names = [
-                      'S',
-                      'M',
-                      'L',
-                      'XL',
-                      'XLL',
-                    ];
-                    return Container(
-                      height: 50,
-                      width: 50,
-                      margin: EdgeInsets.only(left: 10),
+            SizedBox(
+              height: Dimensions.height5,
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 10, right: 10),
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    RegularText(
+                      text: "${ProductApi.productList[widget.index].price}\$",
+                      color: Colors.black,
+                      size: Dimensions.font16,
+                      style: theme.textTheme.headline4,
+                    ),
+                    Container(
+                      height: 20,
+                      width: 100,
                       decoration: BoxDecoration(
-                          shape: BoxShape.circle,
+                          borderRadius: BorderRadius.circular(20),
                           border:
                               Border.all(color: Colors.grey.withOpacity(.2))),
-                      child: Center(
-                        child: RegularText(
-                          text: "${names[index]}",
-                          color: Colors.black,
-                          size: Dimensions.font16,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 5, right: 5),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Icon(
+                              Icons.remove,
+                              size: 18,
+                            ),
+                            Container(
+                              height: 20,
+                              width: 20,
+                              child: RegularText(
+                                text: "1",
+                                color: Colors.black,
+                                size: Dimensions.font16,
+                              ),
+                            ),
+                            Icon(
+                              Icons.add,
+                              size: 18,
+                            ),
+                          ],
                         ),
                       ),
-                    );
-                  })),
+                    ),
+                  ]),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.all(10),
-            child: Align(
-              alignment: Alignment.topLeft,
-              child: RegularText(
-                text: "Description",
-                color: Colors.black,
-                size: Dimensions.font18,
+            Padding(
+              padding: EdgeInsets.all(10),
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: RegularText(
+                  text: "Size",
+                  style: theme.textTheme.headline5,
+                  color: Colors.black,
+                  size: Dimensions.font18,
+                ),
               ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.all(10),
-            child: Align(
-              alignment: Alignment.topLeft,
-              child: RegularText(
-                text:
-                    " This is description of product which so hot in selling in current market prices which is, which so completetive.sThis is description of product which so hot in selling in current market prices which is, which so completetive.sThis is description of product which so hot in selling in current market prices which is, which so completetive.s",
-                color: Colors.black,
-                size: Dimensions.font18,
+            SizedBox(
+              height: Dimensions.height15,
+            ),
+            Center(
+              child: Container(
+                height: 50,
+                width: Dimensions.screenWidth * 0.8,
+                child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 5,
+                    itemBuilder: ((context, index) {
+                      List<String> names = [
+                        'S',
+                        'M',
+                        'L',
+                        'XL',
+                        'XLL',
+                      ];
+                      return Container(
+                        height: 50,
+                        width: 50,
+                        margin: EdgeInsets.only(left: 10),
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border:
+                                Border.all(color: Colors.grey.withOpacity(.2))),
+                        child: Center(
+                          child: RegularText(
+                            text: "${names[index]}",
+                            color: Colors.black,
+                            size: Dimensions.font16,
+                          ),
+                        ),
+                      );
+                    })),
               ),
             ),
-          ),
-          SizedBox(
-            height: Dimensions.height10,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20),
-            child: CustomButton(title: "Buy", clickFuction: () {}),
-          ),
-          SizedBox(
-            height: Dimensions.height25,
-          ),
-          SizedBox(
-            height: Dimensions.width10,
-          ),
-        ]),
+            Padding(
+              padding: EdgeInsets.all(10),
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: RegularText(
+                  text: "Description",
+                  color: Colors.black,
+                  size: Dimensions.font18,
+                  style: theme.textTheme.headline3,
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(10),
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: RegularText(
+                  text: ProductApi.productList[widget.index].description,
+                  color: Colors.black,
+                  size: Dimensions.font18,
+                ),
+              ),
+            ),
+            SizedBox(
+              height: Dimensions.height10,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: CustomButton(title: "Buy", clickFuction: () {}),
+            ),
+            SizedBox(
+              height: Dimensions.height25,
+            ),
+            SizedBox(
+              height: Dimensions.width10,
+            ),
+          ]),
+        ),
       ),
     );
   }

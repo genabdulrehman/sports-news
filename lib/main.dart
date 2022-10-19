@@ -74,7 +74,7 @@ class _MyAppState extends State<MyApp> {
           },
           initialRoute: '/',
           routes: {
-            '/': (_) => ShopPage(),
+            '/': (_) => SplashScreen(),
             '/welcome': (_) => WelcomeScreen(),
             '/logIn': (_) => LogInScreen(),
             '/register': (_) => RegisterScreen(),

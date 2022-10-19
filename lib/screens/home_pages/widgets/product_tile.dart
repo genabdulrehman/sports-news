@@ -12,9 +12,11 @@ class ProductTile extends StatelessWidget {
   final String price;
   final String description;
   final int quanitiy;
+  final int index;
   bool big;
 
   ProductTile({
+    this.index,
     ThemeData style,
     this.name,
     this.imgUrl,
@@ -34,28 +36,20 @@ class ProductTile extends StatelessWidget {
         children: [
           GestureDetector(
             onTap: () {
-              Get.to(ProdcutDetailScreen());
+              Get.to(ProdcutDetailScreen(index: index));
             },
             child: Container(
               height: big ? 200 : 160,
               width: big ? 150 : 120,
               decoration: BoxDecoration(
-                  color: Colors.blue.withOpacity(.1),
-                  borderRadius: BorderRadius.circular(20)),
-              child: Stack(
-                children: [
-                  Center(
-                    child: SizedBox(
-                      height: big ? 120 : 100,
-                      width: big ? 150 : 100,
-                      child: Image.asset(
-                        imgUrl,
-                        fit: BoxFit.contain,
-                      ),
+                  color: theme.primaryColorDark,
+                  borderRadius: BorderRadius.circular(20),
+                  image: DecorationImage(
+                    image: AssetImage(
+                      imgUrl,
                     ),
-                  ),
-                ],
-              ),
+                    fit: BoxFit.cover,
+                  )),
             ),
           ),
           SizedBox(
@@ -96,6 +90,7 @@ class ProductTile extends StatelessWidget {
               text: name,
               color: Colors.black,
               size: Dimensions.font16,
+              style: theme.textTheme.headline4,
             ),
           ),
           SizedBox(

@@ -119,7 +119,7 @@ class _ShopPageState extends State<ShopPage> {
                   ),
                   Row(
                     children: [
-                      RegularText(text: "see more"),
+                      // RegularText(text: "see more"),
                       SizedBox(
                         width: Dimensions.height5 - 3,
                       ),
@@ -146,6 +146,7 @@ class _ShopPageState extends State<ShopPage> {
                       name: ProductApi.productList[index].name,
                       imgUrl: ProductApi.productList[index].imgUrl,
                       price: ProductApi.productList[index].price,
+                      index: index,
                       big: true,
                     );
                   })),
@@ -156,7 +157,7 @@ class _ShopPageState extends State<ShopPage> {
               child: Image.asset("assets/shop/sports1.jpeg"),
             ),
             SizedBox(
-              height: Dimensions.height10,
+              height: Dimensions.height25,
             ),
             Padding(
               padding: const EdgeInsets.only(left: 10, right: 10),
@@ -165,11 +166,12 @@ class _ShopPageState extends State<ShopPage> {
                 children: [
                   RegularText(
                     text: "Featured products",
+                    style: theme.textTheme.headline3,
                     // size: 20,
                   ),
                   Row(
                     children: [
-                      RegularText(text: "see more"),
+                      // RegularText(text: "see more"),
                       SizedBox(
                         width: Dimensions.height5 - 3,
                       ),
@@ -197,11 +199,12 @@ class _ShopPageState extends State<ShopPage> {
                       imgUrl: ProductApi.productList[index].imgUrl,
                       big: false,
                       price: ProductApi.productList[index].price,
+                      index: index,
                     );
                   })),
             ),
             SizedBox(
-              height: 50,
+              height: 10,
             ),
           ],
         ),

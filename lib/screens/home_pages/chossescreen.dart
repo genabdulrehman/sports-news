@@ -7,6 +7,7 @@ import 'package:azul_football/widgets/trensations_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
+import 'package:get/get_navigation/src/routes/default_transitions.dart';
 
 import 'bottom_nav_screen.dart';
 
@@ -28,64 +29,92 @@ class _ChooseScreeState extends State<ChooseScree> {
     final double itemWidth = size.width / 2;
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.menu,color: theme.iconTheme.color,),
-        ),
-        title: Text("HOME",style: theme.textTheme.headline3,),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: ClipOval(
-              child: Image(image: AssetImage(
-                "assets/images/profile.png"
-              )),
-            ),
-          )
-        ],
-      ),
+          // leading: Align(
+          //   alignment: Alignment.center,
+          //   child: Padding(
+          //     padding: const EdgeInsets.only(left: 5),
+          //     child: Text(
+          //       "HOME",
+          //       style: theme.textTheme.headline3,
+          //     ),
+          //   ),
+          // ),
+          // title: Text(
+          //   "HOME",
+          //   style: theme.textTheme.headline3,
+          // ),
+          // actions: [
+          //   Padding(
+          //     padding: const EdgeInsets.all(8.0),
+          //     child: ClipOval(
+          //       child: Image(image: AssetImage("assets/images/profile.png")),
+          //     ),
+          //   )
+          // ],
+          ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: size.width*.05),
+          padding: EdgeInsets.symmetric(horizontal: size.width * .05),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: size.height*.03,),
+              SizedBox(
+                height: size.height * .03,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("UPCOMING BOOKINGS",style: theme.textTheme.headline1,),
-                  Icon(Icons.arrow_forward,color: Colors.teal,)
+                  Text(
+                    "UPCOMING BOOKINGS",
+                    style: theme.textTheme.headline1,
+                  ),
+                  Icon(
+                    Icons.arrow_forward,
+                    color: Colors.teal,
+                  )
                 ],
               ),
-              SizedBox(height: size.height*.03,),
+              SizedBox(
+                height: size.height * .03,
+              ),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    for(int i=0; i< BookingApi.upComingData.length ; i++)
-                    ShakeListTransition(
-                      duration: Duration(milliseconds: (i + 3) * 300),
-                      axis: Axis.horizontal,
-                      child: BookingCardWidget(
-                        bookingModel: BookingApi.upComingData[i],
-                        width: MediaQuery.of(context).size.width*.9,
-                        firstColor: kUpcomingEventCardStartColor,
-                        secondColor: kUpcomingEventCardEndColor,
+                    for (int i = 0; i < BookingApi.upComingData.length; i++)
+                      ShakeListTransition(
+                        duration: Duration(milliseconds: (i + 3) * 300),
+                        axis: Axis.horizontal,
+                        child: BookingCardWidget(
+                          bookingModel: BookingApi.upComingData[i],
+                          width: MediaQuery.of(context).size.width * .9,
+                          firstColor: kUpcomingEventCardStartColor,
+                          secondColor: kUpcomingEventCardEndColor,
+                        ),
                       ),
-                    ),
                   ],
                 ),
               ),
-              SizedBox(height: size.height*.03,),
+              SizedBox(
+                height: size.height * .03,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("SPORTS",style: theme.textTheme.headline1,),
-                  Icon(Icons.arrow_forward,color: Colors.teal,)
+                  Text(
+                    "SPORTS",
+                    style: theme.textTheme.headline1,
+                  ),
+                  Icon(
+                    Icons.arrow_forward,
+                    color: Colors.teal,
+                  )
                 ],
               ),
-              SizedBox(height: 20,),
+              SizedBox(
+                height: 20,
+              ),
               GridView.count(
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
@@ -96,75 +125,83 @@ class _ChooseScreeState extends State<ChooseScree> {
                 crossAxisSpacing: 8.0,
                 children: [
                   ChooseSportWidget(
-                    onTap: (){
+                    onTap: () {
                       Get.to(
-                            () => BottomNavScreen(
-                          index: 1,newsData: NewsApi.aListNewsFootball,
+                        () => BottomNavScreen(
+                          index: 1,
+                          newsData: NewsApi.aListNewsFootball,
                         ),
                         transition: Transition.fadeIn,
                       );
                     },
-                    url: "https://media.gettyimages.com/id/1351666177/photo/manchester-united-v-manchester-city-premier-league.webp?s=1024x1024&w=gi&k=20&c=TFoWrG6ruTToZx8vGOJl5Myg_GKKa0vpBMXKkAKdkyc=",
+                    url:
+                        "https://media.gettyimages.com/id/1351666177/photo/manchester-united-v-manchester-city-premier-league.webp?s=1024x1024&w=gi&k=20&c=TFoWrG6ruTToZx8vGOJl5Myg_GKKa0vpBMXKkAKdkyc=",
                     title: "Football",
                   ),
                   ChooseSportWidget(
-                    onTap: (){
+                    onTap: () {
                       Get.to(
-                            () => BottomNavScreen(
-                          index: 1, newsData: NewsApi.aListNewsBasketball
-                        ),
+                        () => BottomNavScreen(
+                            index: 1, newsData: NewsApi.aListNewsBasketball),
                         transition: Transition.fadeIn,
                       );
                     },
-                    url: "https://images.unsplash.com/photo-1579487685737-e435a87b2518?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YmFza2V0YmFsbCUyMHBsYXllcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
+                    url:
+                        "https://images.unsplash.com/photo-1579487685737-e435a87b2518?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YmFza2V0YmFsbCUyMHBsYXllcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
                     title: "Basketball",
                   ),
                   ChooseSportWidget(
-                    onTap: (){
+                    onTap: () {
                       Get.to(
-                            () => BottomNavScreen(
-                          index: 1,newsData: NewsApi.aListNewsCricket,
+                        () => BottomNavScreen(
+                          index: 1,
+                          newsData: NewsApi.aListNewsCricket,
                         ),
                         transition: Transition.fadeIn,
                       );
                     },
-                    url: "https://img1.hscicdn.com/image/upload/f_auto,t_ds_w_1200,q_50/lsci/db/PICTURES/CMS/347200/347269.jpg",
+                    url:
+                        "https://img1.hscicdn.com/image/upload/f_auto,t_ds_w_1200,q_50/lsci/db/PICTURES/CMS/347200/347269.jpg",
                     title: "Cricket",
                   ),
                   ChooseSportWidget(
-                    onTap: (){
+                    onTap: () {
                       Get.to(
-                            () => BottomNavScreen(
-                          index: 1,newsData: NewsApi.aListNewsFootball,
+                        () => BottomNavScreen(
+                          index: 1,
+                          newsData: NewsApi.aListNewsFootball,
                         ),
                         transition: Transition.fadeIn,
                       );
                     },
-                    url: "https://media.gettyimages.com/id/1351666177/photo/manchester-united-v-manchester-city-premier-league.webp?s=1024x1024&w=gi&k=20&c=TFoWrG6ruTToZx8vGOJl5Myg_GKKa0vpBMXKkAKdkyc=",
+                    url:
+                        "https://media.gettyimages.com/id/1351666177/photo/manchester-united-v-manchester-city-premier-league.webp?s=1024x1024&w=gi&k=20&c=TFoWrG6ruTToZx8vGOJl5Myg_GKKa0vpBMXKkAKdkyc=",
                     title: "Football",
                   ),
                   ChooseSportWidget(
-                    onTap: (){
+                    onTap: () {
                       Get.to(
-                            () => BottomNavScreen(
-                            index: 1, newsData: NewsApi.aListNewsBasketball
-                        ),
+                        () => BottomNavScreen(
+                            index: 1, newsData: NewsApi.aListNewsBasketball),
                         transition: Transition.fadeIn,
                       );
                     },
-                    url: "https://images.unsplash.com/photo-1579487685737-e435a87b2518?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YmFza2V0YmFsbCUyMHBsYXllcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
+                    url:
+                        "https://images.unsplash.com/photo-1579487685737-e435a87b2518?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YmFza2V0YmFsbCUyMHBsYXllcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
                     title: "Basketball",
                   ),
                   ChooseSportWidget(
-                    onTap: (){
+                    onTap: () {
                       Get.to(
-                            () => BottomNavScreen(
-                          index: 1,newsData: NewsApi.aListNewsCricket,
+                        () => BottomNavScreen(
+                          index: 1,
+                          newsData: NewsApi.aListNewsCricket,
                         ),
                         transition: Transition.fadeIn,
                       );
                     },
-                    url: "https://img1.hscicdn.com/image/upload/f_auto,t_ds_w_1200,q_50/lsci/db/PICTURES/CMS/347200/347269.jpg",
+                    url:
+                        "https://img1.hscicdn.com/image/upload/f_auto,t_ds_w_1200,q_50/lsci/db/PICTURES/CMS/347200/347269.jpg",
                     title: "Cricket",
                   ),
                 ],
