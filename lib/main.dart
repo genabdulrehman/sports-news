@@ -1,7 +1,5 @@
 import 'package:azul_football/helpers/constants.dart';
-import 'package:azul_football/models/product_model.dart';
 import 'package:azul_football/screens/home_pages/bottom_nav_screen.dart';
-import 'package:azul_football/screens/home_pages/shop/shop_page.dart';
 import 'package:azul_football/screens/user/login.dart';
 import 'package:azul_football/screens/user/register.dart';
 import 'package:azul_football/screens/user/splash.dart';
