@@ -169,40 +169,14 @@ class _ChooseScreeState extends State<ChooseScree> {
                       Get.to(
                         () => BottomNavScreen(
                           index: 1,
-                          newsData: NewsApi.aListNewsFootball,
+                          newsData: NewsApi.aListNewsVolleyball,
                         ),
                         transition: Transition.fadeIn,
                       );
                     },
                     url:
-                        "https://media.gettyimages.com/id/1351666177/photo/manchester-united-v-manchester-city-premier-league.webp?s=1024x1024&w=gi&k=20&c=TFoWrG6ruTToZx8vGOJl5Myg_GKKa0vpBMXKkAKdkyc=",
-                    title: "Football",
-                  ),
-                  ChooseSportWidget(
-                    onTap: () {
-                      Get.to(
-                        () => BottomNavScreen(
-                            index: 1, newsData: NewsApi.aListNewsBasketball),
-                        transition: Transition.fadeIn,
-                      );
-                    },
-                    url:
-                        "https://images.unsplash.com/photo-1579487685737-e435a87b2518?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YmFza2V0YmFsbCUyMHBsYXllcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
-                    title: "Basketball",
-                  ),
-                  ChooseSportWidget(
-                    onTap: () {
-                      Get.to(
-                        () => BottomNavScreen(
-                          index: 1,
-                          newsData: NewsApi.aListNewsCricket,
-                        ),
-                        transition: Transition.fadeIn,
-                      );
-                    },
-                    url:
-                        "https://img1.hscicdn.com/image/upload/f_auto,t_ds_w_1200,q_50/lsci/db/PICTURES/CMS/347200/347269.jpg",
-                    title: "Cricket",
+                        "https://multifiles.pressherald.com/uploads/sites/10/2021/10/27157863_20211028_volleyball_9-e1662569448264.jpg",
+                    title: "Volleyball",
                   ),
                 ],
               ),

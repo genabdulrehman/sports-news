@@ -56,8 +56,7 @@ class NewsApi {
     NewsModel(
       id: '1',
       date: '1 Day AGO',
-      title:
-          'The Nets actually appear to be enjoying SHARING THE BASKETBALL',
+      title: 'The Nets actually appear to be enjoying SHARING THE BASKETBALL',
       category: 'NBA',
       image:
           'https://staticg.sportskeeda.com/editor/2022/10/0a061-16656425885347-1920.jpg',
@@ -66,7 +65,8 @@ class NewsApi {
     NewsModel(
       id: '2',
       date: '22, Mars',
-      title: 'Fatima Reyadh, first woman to coach men’s basketball team in Bahrain',
+      title:
+          'Fatima Reyadh, first woman to coach men’s basketball team in Bahrain',
       category: 'NEWS',
       image:
           'https://cdn.siasat.com/wp-content/uploads/2022/10/IMG_20221012_214716_1200_x_900_pixel-780x470.jpg',
@@ -75,8 +75,7 @@ class NewsApi {
     NewsModel(
       id: '3',
       date: 'Yesterday',
-      title:
-          'Former NBA Player Ben Gordon Charged With Assaulting Son, Police',
+      title: 'Former NBA Player Ben Gordon Charged With Assaulting Son, Police',
       category: 'WOMEN',
       image:
           'https://images.news18.com/ibnlive/uploads/2022/10/ben-gordon-16656296163x2.jpg?impolicy=website&width=510&height=356',
@@ -85,18 +84,15 @@ class NewsApi {
     NewsModel(
       id: '4',
       date: 'TODAY',
-      title:
-          'DRAYMOND GREEN FINED BUT NOT SUSPENDED, SET TO REJOIN WARRIORS',
+      title: 'DRAYMOND GREEN FINED BUT NOT SUSPENDED, SET TO REJOIN WARRIORS',
       category: 'NBA',
-      image:
-          'https://cdn.nba.com/manage/2022/10/kerr-draymond-768x432.jpg',
+      image: 'https://cdn.nba.com/manage/2022/10/kerr-draymond-768x432.jpg',
       body: _kBodyNews[3],
     ),
     NewsModel(
       id: '5',
       date: '21 MARS',
-      title:
-          'ZION WILLIAMSON TWISTS LEFT ANKLE, SAYS HE’S FINE',
+      title: 'ZION WILLIAMSON TWISTS LEFT ANKLE, SAYS HE’S FINE',
       category: 'COACHS',
       image:
           'https://cdn.vox-cdn.com/thumbor/Z2RtHowWfISZoqyWF5H232F3SOM=/0x0:4781x7171/1400x933/filters:focal(1865x1195:2629x1959):no_upscale()/cdn.vox-cdn.com/uploads/chorus_image/image/71431492/usa_today_19123852.0.jpg',
@@ -108,50 +104,49 @@ class NewsApi {
     NewsModel(
       id: '1',
       date: '1 Day AGO',
-      title:
-      'Kanjuruhan stadium: Indonesia to demolish site of arena disaster',
+      title: 'Kanjuruhan stadium: Indonesia to demolish site of arena disaster',
       category: 'Football',
       image:
-      'https://ichef.bbci.co.uk/news/976/cpsprodpb/BDAA/production/_127245584_gettyimages-1429904127.jpg.webp',
+          'https://cdn.britannica.com/31/183231-050-8D8EB720/Carli-Lloyd-penalty-goal-semifinal-match-Germany-2015.jpg',
       body: _kBodyNews[0],
     ),
     NewsModel(
       id: '2',
       date: '22, Mars',
-      title: 'Fatima Reyadh, first woman to coach men’s football team in Bahrain',
+      title:
+          'Fatima Reyadh, first woman to coach men’s football team in Bahrain',
       category: 'Football',
       image:
-      'https://ichef.bbci.co.uk/onesport/cps/976/cpsprodpb/11CDC/production/_127242927_gettyimages-1341508983.jpg',
+          'https://www.si.com/.image/t_share/MTY4MjU4NzYyODg1MTc5Mjkz/130307145811-alex-morgan-t1b-single-image-cutjpg.jpg',
       body: _kBodyNews[1],
     ),
     NewsModel(
       id: '3',
       date: 'Yesterday',
       title:
-      'Liverpools Portugal forward Diogo Jota ruled out with calf injury',
+          'Liverpools Portugal forward Diogo Jota ruled out with calf injury',
       category: 'Football',
       image:
-      'https://ichef.bbci.co.uk/onesport/cps/976/cpsprodpb/103A0/production/_127246466_shutterstock_editorial_13464295bg.jpg',
+          'https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/bltfdae44a2e136b93a/630cdb07982f3c4a2d406258/Mbappe_Neymar.jpg',
       body: _kBodyNews[2],
     ),
     NewsModel(
       id: '4',
       date: '45 minutes',
       title:
-      'Managers have responsibility to behave on touchline - Frank Lampard',
+          'Managers have responsibility to behave on touchline - Frank Lampard',
       category: 'Football',
       image:
-      'https://images.immediate.co.uk/production/volatile/sites/3/2022/01/Best-players-world-a653a22.jpg?quality=90&webp=true&resize=1750,1167',
+          'https://images.immediate.co.uk/production/volatile/sites/3/2022/01/Best-players-world-a653a22.jpg?quality=90&webp=true&resize=1750,1167',
       body: _kBodyNews[3],
     ),
     NewsModel(
       id: '5',
       date: '21 MARS',
-      title:
-      'ZION WILLIAMSON TWISTS LEFT ANKLE, SAYS HE’S FINE',
+      title: 'ZION WILLIAMSON TWISTS LEFT ANKLE, SAYS HE’S FINE',
       category: 'Football',
       image:
-      'https://www.sportingfree.com/wp-content/uploads/2021/09/Edouard-Mendy-768x510.png',
+          'https://www.sportingfree.com/wp-content/uploads/2021/09/Edouard-Mendy-768x510.png',
       body: _kBodyNews[4],
     ),
   ];
@@ -161,10 +156,10 @@ class NewsApi {
       id: '1',
       date: '1 Hour AGO',
       title:
-      "Dushmantha Chameera ruled out of Sri Lanka's Group A decider against Netherlands",
+          "Dushmantha Chameera ruled out of Sri Lanka's Group A decider against Netherlands",
       category: 'Cricket',
       image:
-      'https://img1.hscicdn.com/image/upload/f_auto,t_ds_w_1280,q_70/lsci/db/PICTURES/CMS/347700/347773.4.jpg',
+          'https://img1.hscicdn.com/image/upload/f_auto,t_ds_w_1280,q_70/lsci/db/PICTURES/CMS/347700/347773.4.jpg',
       body: _kBodyNews[0],
     ),
     NewsModel(
@@ -173,43 +168,87 @@ class NewsApi {
       title: 'Daren Sammy returns to Peshawar Zalmi as head coach',
       category: 'Cricket',
       image:
-      'https://img1.hscicdn.com/image/upload/f_auto,t_ds_w_1280,q_70/lsci/db/PICTURES/CMS/300800/300878.4.jpg',
+          'https://img1.hscicdn.com/image/upload/f_auto,t_ds_w_1280,q_70/lsci/db/PICTURES/CMS/300800/300878.4.jpg',
       body: _kBodyNews[1],
     ),
     NewsModel(
       id: '3',
       date: "4 Hours AGO",
-      title:
-      "India won't travel to Pakistan for 2023 Asia Cup",
+      title: "India won't travel to Pakistan for 2023 Asia Cup",
       category: 'Cricket',
       image:
-      'https://img1.hscicdn.com/image/upload/f_auto,t_ds_w_1280,q_70/lsci/db/PICTURES/CMS/345300/345363.4.jpg',
+          'https://img1.hscicdn.com/image/upload/f_auto,t_ds_w_1280,q_70/lsci/db/PICTURES/CMS/345300/345363.4.jpg',
       body: _kBodyNews[2],
     ),
     NewsModel(
       id: '4',
       date: '45 minutes',
       title:
-      'Liam Livingstone signals World Cup readiness in thumping England warm-up win',
+          'Liam Livingstone signals World Cup readiness in thumping England warm-up win',
       category: 'Cricket',
       image:
-      'https://img1.hscicdn.com/image/upload/f_auto,t_ds_w_1280,q_70/lsci/db/PICTURES/CMS/347700/347730.4.jpg',
+          'https://img1.hscicdn.com/image/upload/f_auto,t_ds_w_1280,q_70/lsci/db/PICTURES/CMS/347700/347730.4.jpg',
       body: _kBodyNews[3],
     ),
     NewsModel(
       id: '5',
       date: '20 minutes',
-      title:
-      'The greatest T20 World Cup performance - how the fans have voted',
+      title: 'The greatest T20 World Cup performance - how the fans have voted',
       category: 'Cricket',
       image:
-      'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_1200,q_60/lsci/db/PICTURES/CMS/347600/347607.6.jpg',
+          'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_1200,q_60/lsci/db/PICTURES/CMS/347600/347607.6.jpg',
       body: _kBodyNews[4],
     ),
   ];
 
-
-
+  static List<NewsModel> aListNewsVolleyball = [
+    NewsModel(
+      id: '1',
+      date: '1 Hour AGO',
+      title: "Paola Egonu mulls break from Italy volleyball team over racism",
+      category: 'Volleyball',
+      image:
+          'https://www.aljazeera.com/wp-content/uploads/2022/10/2022-10-16T141958Z_724361622_RC2E2X9T6U7N_RTRMADP_3_VOLLEYBALL-ITALY-EGONU.jpg?resize=770%2C513',
+      body: _kBodyNews[0],
+    ),
+    NewsModel(
+      id: '2',
+      date: 'Today',
+      title:
+          '2022 NCAA volleyball tournament: Schedule, dates for the DI womens championship',
+      category: 'Volleyball',
+      image: 'https://images.indianexpress.com/2021/09/Volleyball.jpg',
+      body: _kBodyNews[1],
+    ),
+    NewsModel(
+      id: '3',
+      date: "4 Hours AGO",
+      title: "U.S. Women Sweep Brazil in Rematch of Olympic Final",
+      category: 'Volleyball',
+      image:
+          'https://images.midilibre.fr/api/v1/images/view/6318d7c45d092f534f04ba5e/large/image.jpg?v=1',
+      body: _kBodyNews[2],
+    ),
+    NewsModel(
+      id: '4',
+      date: '45 minutes',
+      title:
+          'Barry Goldberg coaches American University volleyball despite cancer',
+      category: 'Volleyball',
+      image:
+          'https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/5WRHNACB3EI63DDOSODL27GYEY.jpg&w=1200',
+      body: _kBodyNews[3],
+    ),
+    NewsModel(
+      id: '5',
+      date: '20 minutes',
+      title: 'U.S. womens volleyball team takes fourth at world championship',
+      category: 'Volleyball',
+      image:
+          'https://bloximages.chicago2.vip.townnews.com/journalstar.com/content/tncms/assets/v3/editorial/c/16/c16c6e79-14d4-59da-a456-ef3602e51108/61aadfe262f33.image.jpg?crop=1695%2C958%2C0%2C0&resize=1695%2C958&order=crop%2Cresize',
+      body: _kBodyNews[4],
+    ),
+  ];
 
   static List<String> _kBodyNews = [
     """
