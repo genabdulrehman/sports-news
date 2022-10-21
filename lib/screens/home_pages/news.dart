@@ -1,9 +1,9 @@
 import 'package:azul_football/api/events_api.dart';
 import 'package:azul_football/api/leagues_api.dart';
-import 'package:azul_football/api/news_api.dart';
 import 'package:azul_football/helpers/constants.dart';
 
 import 'package:azul_football/localizations/localization_constants.dart';
+import 'package:azul_football/models/events.dart';
 import 'package:azul_football/models/news.dart';
 import 'package:azul_football/screens/details/events_details.dart';
 import 'package:azul_football/screens/details/news_details.dart';
@@ -18,11 +18,11 @@ import 'package:get/get.dart';
 import 'bottom_nav_screen.dart';
 
 class NewsPage extends StatefulWidget {
+  final List<EventsModel> eventApi;
   final List<NewsModel> newsApi;
   final index;
-  const NewsPage({
-    this.newsApi,
-    Key key, this.index}) : super(key: key);
+  const NewsPage({this.newsApi, Key key, this.index, this.eventApi})
+      : super(key: key);
   @override
   _NewsPageState createState() => _NewsPageState();
 }
@@ -53,13 +53,13 @@ class _NewsPageState extends State<NewsPage> {
                           duration: Duration(milliseconds: (i + 3) * 300),
                           axis: Axis.horizontal,
                           child: CardFavoritTeam(
-                            scoreHome: EventsApi.eListEvents[i].scoreHome,
-                            scoreAway: EventsApi.eListEvents[i].scoreAway,
-                            logoAway: EventsApi.eListEvents[i].logoAway,
-                            logoHome: EventsApi.eListEvents[i].logoHome,
-                            nameAway: EventsApi.eListEvents[i].nameAway,
-                            nameHome: EventsApi.eListEvents[i].nameHome,
-                            leagueName: LeaguesApi.lLeaguesList[i].name,
+                            scoreHome: widget.eventApi[i].scoreHome,
+                            scoreAway: widget.eventApi[i].scoreAway,
+                            logoAway: widget.eventApi[i].logoAway,
+                            logoHome: widget.eventApi[i].logoHome,
+                            nameAway: widget.eventApi[i].nameAway,
+                            nameHome: widget.eventApi[i].nameHome,
+                            leagueName: widget.eventApi[i].nameHome,
                             onTap: () {
                               //TODO: Open Events Details
                               Get.to(
@@ -72,20 +72,13 @@ class _NewsPageState extends State<NewsPage> {
                           duration: Duration(milliseconds: (i + 3) * 300),
                           axis: Axis.horizontal,
                           child: CardFavoritTeam(
-                            scoreHome:
-                                EventsApi.eListEventsBasketball[i].scoreHome,
-                            scoreAway:
-                                EventsApi.eListEventsBasketball[i].scoreAway,
-                            logoAway:
-                                EventsApi.eListEventsBasketball[i].logoAway,
-                            logoHome:
-                                EventsApi.eListEventsBasketball[i].logoHome,
-                            nameAway:
-                                EventsApi.eListEventsBasketball[i].nameAway,
-                            nameHome:
-                                EventsApi.eListEventsBasketball[i].nameHome,
-                            leagueName:
-                                LeaguesApi.lLeaguesListBasketball[i].name,
+                            scoreHome: widget.eventApi[i].scoreHome,
+                            scoreAway: widget.eventApi[i].scoreAway,
+                            logoAway: widget.eventApi[i].logoAway,
+                            logoHome: widget.eventApi[i].logoHome,
+                            nameAway: widget.eventApi[i].nameAway,
+                            nameHome: widget.eventApi[i].nameHome,
+                            leagueName: widget.eventApi[i].nameHome,
                             onTap: () {
                               //TODO: Open Events Details
                               Get.to(
@@ -134,27 +127,27 @@ class _NewsPageState extends State<NewsPage> {
                   //           },
                   //         ),
                   //       )
-                       ShakeTransition(
-                          duration: Duration(milliseconds: 1600),
-                          axis: Axis.horizontal,
-                          child: CardRecentNews(
-                            title: widget.newsApi[i].title,
-                            image: widget.newsApi[i].image,
-                            date: widget.newsApi[i].date,
-                            category: widget.newsApi[i].category,
-                            onTap: () {
-                              Get.to(
-                                () => BottomNavScreen(
-                                  screen: NewsDetails(
-                                    id: i,
-                                  ),
-                                  indexPage: 1,
-                                ),
-                                transition: Transition.fadeIn,
-                              );
-                            },
+                  ShakeTransition(
+                    duration: Duration(milliseconds: 1600),
+                    axis: Axis.horizontal,
+                    child: CardRecentNews(
+                      title: widget.newsApi[i].title,
+                      image: widget.newsApi[i].image,
+                      date: widget.newsApi[i].date,
+                      category: widget.newsApi[i].category,
+                      onTap: () {
+                        Get.to(
+                          () => BottomNavScreen(
+                            screen: NewsDetails(
+                              id: i,
+                            ),
+                            indexPage: 1,
                           ),
-                        ),
+                          transition: Transition.fadeIn,
+                        );
+                      },
+                    ),
+                  ),
               ],
             ),
           ),
@@ -212,48 +205,48 @@ class _NewsPageState extends State<NewsPage> {
               children: [
                 for (int i = 0; i < widget.newsApi.length; i++)
                   //(indexgame == 0)
-                      // ? ShakeListTransition(
-                      //     duration: Duration(milliseconds: (i + 3) * 300),
-                      //     // axis: Axis.vertical,
-                      //     child: CardLatestNews(
-                      //       category: NewsApi.aListNews[i].category,
-                      //       image: NewsApi.aListNews[i].image,
-                      //       title: NewsApi.aListNews[i].title,
-                      //       onTap: () {
-                      //         //TODO : Open News
-                      //         Get.to(
-                      //           () => BottomNavScreen(
-                      //             screen: NewsDetails(
-                      //               id: i,
-                      //             ),
-                      //             indexPage: 1,
-                      //           ),
-                      //           transition: Transition.fadeIn,
-                      //         );
-                      //       },
-                      //     ),
-                      //   )
-                       ShakeListTransition(
-                          duration: Duration(milliseconds: (i + 3) * 300),
-                          // axis: Axis.vertical,
-                          child: CardLatestNews(
-                            category: widget.newsApi[i].category,
-                            image: widget.newsApi[i].image,
-                            title: widget.newsApi[i].title,
-                            onTap: () {
-                              //TODO : Open News
-                              Get.to(
-                                () => BottomNavScreen(
-                                  screen: NewsDetails(
-                                    id: i,
-                                  ),
-                                  indexPage: 1,
-                                ),
-                                transition: Transition.fadeIn,
-                              );
-                            },
+                  // ? ShakeListTransition(
+                  //     duration: Duration(milliseconds: (i + 3) * 300),
+                  //     // axis: Axis.vertical,
+                  //     child: CardLatestNews(
+                  //       category: NewsApi.aListNews[i].category,
+                  //       image: NewsApi.aListNews[i].image,
+                  //       title: NewsApi.aListNews[i].title,
+                  //       onTap: () {
+                  //         //TODO : Open News
+                  //         Get.to(
+                  //           () => BottomNavScreen(
+                  //             screen: NewsDetails(
+                  //               id: i,
+                  //             ),
+                  //             indexPage: 1,
+                  //           ),
+                  //           transition: Transition.fadeIn,
+                  //         );
+                  //       },
+                  //     ),
+                  //   )
+                  ShakeListTransition(
+                    duration: Duration(milliseconds: (i + 3) * 300),
+                    // axis: Axis.vertical,
+                    child: CardLatestNews(
+                      category: widget.newsApi[i].category,
+                      image: widget.newsApi[i].image,
+                      title: widget.newsApi[i].title,
+                      onTap: () {
+                        //TODO : Open News
+                        Get.to(
+                          () => BottomNavScreen(
+                            screen: NewsDetails(
+                              id: i,
+                            ),
+                            indexPage: 1,
                           ),
-                        ),
+                          transition: Transition.fadeIn,
+                        );
+                      },
+                    ),
+                  ),
               ],
             ),
           ),

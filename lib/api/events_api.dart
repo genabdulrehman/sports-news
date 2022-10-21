@@ -55,17 +55,68 @@ class EventsApi {
       timeMatch: '90+6',
     ),
   ];
-   static List<EventsModel> eListEvents = [
+  static List<EventsModel> eventsCricket = [
     EventsModel(
       id: '0',
+      logoAway: 'https://s.ndtvimg.com/images/entities/300/india-6.png',
+      logoHome:
+          'https://www.freepnglogos.com/uploads/cricket-logo-png/pakistan-cricket-team-18.png',
+      nameAway: 'India',
+      nameHome: 'Pakistan',
+      scoreAway: 234,
+      scoreHome: 113,
+      dateMatch: 'Today, 9:24 PM',
+      timeMatch: '75:04',
+    ),
+    EventsModel(
+      id: '1',
       logoAway:
-          'https://ssl.gstatic.com/onebox/media/sports/logos/-WjHLbBIQO9xE2e2MW3OPQ_48x48.png',
+          'https://upload.wikimedia.org/wikipedia/en/e/e4/Logo_of_Sri_Lanka_Cricket.png',
+      logoHome:
+          'https://banner2.cleanpng.com/20180513/rpe/kisspng-logo-sports-association-cricket-team-5af86fefba0305.0840727315262310237619.jpg',
+      nameAway: 'Siri Lanka',
+      nameHome: 'Super Cricket',
+      scoreAway: 109,
+      scoreHome: 132,
+      dateMatch: 'Today, 12:30 PM',
+      timeMatch: '23:45',
+    ),
+    EventsModel(
+      id: '2',
+      logoAway:
+          'https://assets.stickpng.com/images/62822acce977897ab47e96cc.png',
+      logoHome: 'https://cdn.cricket.af/logo-md.png',
+      nameAway: 'Dubai',
+      nameHome: 'Afghanistan',
+      scoreAway: 223,
+      scoreHome: 100,
+      dateMatch: 'Today, 15:24 PM',
+      timeMatch: '',
+    ),
+    EventsModel(
+      id: '3',
+      logoAway:
+          'https://upload.wikimedia.org/wikipedia/en/thumb/7/76/Denver_Nuggets.svg/1200px-Denver_Nuggets.svg.png',
+      logoHome:
+          'https://www.freepnglogos.com/uploads/cricket-logo-png/logo-cricket-australia-png-26.png',
+      nameAway: 'Denver Nuggets',
+      nameHome: 'Los Angeles Clippers',
+      scoreAway: 432,
+      scoreHome: 233,
+      dateMatch: 'Today, 17:00 PM',
+      timeMatch: '90+6',
+    ),
+  ];
+  static List<EventsModel> eListEvents = [
+    EventsModel(
+      id: '0',
+      logoAway: 'https://s.ndtvimg.com/images/entities/300/england-5.png',
       logoHome:
           'https://ssl.gstatic.com/onebox/media/sports/logos/bXkiyIzsbDip3x2FFcUU3A_48x48.png',
       nameAway: 'Wolves',
       nameHome: 'West Ham',
-      scoreAway: 2,
-      scoreHome: 3,
+      scoreAway: 312,
+      scoreHome: 323,
       dateMatch: 'Today, 9:24 PM',
       timeMatch: '75:04',
     ),
@@ -77,8 +128,8 @@ class EventsApi {
           'https://ssl.gstatic.com/onebox/media/sports/logos/EKIe0e-ZIphOcfQAwsuEEQ_48x48.png',
       nameAway: 'Man United',
       nameHome: 'Brighton',
-      scoreAway: 2,
-      scoreHome: 1,
+      scoreAway: 423,
+      scoreHome: 233,
       dateMatch: 'Today, 12:30 PM',
       timeMatch: '23:45',
     ),
@@ -105,6 +156,60 @@ class EventsApi {
       nameHome: 'Crystal Palace',
       scoreAway: 1,
       scoreHome: 1,
+      dateMatch: 'Today, 17:00 PM',
+      timeMatch: '90+6',
+    ),
+  ];
+  static List<EventsModel> eListEventsVolleyball = [
+    EventsModel(
+      id: '0',
+      logoAway:
+          'https://vcunited.club/wp-content/uploads/2022/06/VC-United-Logo-22@2x.png',
+      logoHome:
+          'https://seeklogo.com/images/S/SCG_Volleyball_Team-logo-0D03676949-seeklogo.com.png',
+      nameAway: 'Everton',
+      nameHome: 'Crystal Palace',
+      scoreAway: 23,
+      scoreHome: 12,
+      dateMatch: 'Today, 17:00 PM',
+      timeMatch: '90+6',
+    ),
+    EventsModel(
+      id: '1',
+      logoAway:
+          'https://i.pinimg.com/originals/19/13/01/191301b56e08213096c8129dc1bc4c22.png',
+      logoHome:
+          'https://bergenvolleyball.com/wp-content/uploads/2021/03/Bergen-Volleyball-Club-1.png',
+      nameAway: 'Man United',
+      nameHome: 'Brighton',
+      scoreAway: 22,
+      scoreHome: 12,
+      dateMatch: 'Today, 12:30 PM',
+      timeMatch: '23:45',
+    ),
+    EventsModel(
+      id: '2',
+      logoAway:
+          'https://images.vexels.com/media/users/3/180390/isolated/preview/a6b52e4e657cae7e1c4d9a60484680a2-volleyball-team-branches-badge.png',
+      logoHome:
+          'https://fusionvbc.com/wp-content/uploads/2019/03/Fusion-Logo.png',
+      nameAway: 'Sheffield United',
+      nameHome: 'Arsenal',
+      scoreAway: 2,
+      scoreHome: 3,
+      dateMatch: 'Today, 15:24 PM',
+      timeMatch: '',
+    ),
+    EventsModel(
+      id: '3',
+      logoAway:
+          'https://vcunited.club/wp-content/uploads/2022/06/VC-United-Logo-22@2x.png',
+      logoHome:
+          'https://seeklogo.com/images/S/SCG_Volleyball_Team-logo-0D03676949-seeklogo.com.png',
+      nameAway: 'Everton',
+      nameHome: 'Crystal Palace',
+      scoreAway: 13,
+      scoreHome: 11,
       dateMatch: 'Today, 17:00 PM',
       timeMatch: '90+6',
     ),

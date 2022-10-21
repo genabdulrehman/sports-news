@@ -1,4 +1,5 @@
 import 'package:azul_football/api/booking_api.dart';
+import 'package:azul_football/api/events_api.dart';
 import 'package:azul_football/api/news_api.dart';
 import 'package:azul_football/helpers/colors.dart';
 import 'package:azul_football/screens/home_pages/widgets/booking_card_widget.dart';
@@ -130,6 +131,7 @@ class _ChooseScreeState extends State<ChooseScree> {
                         () => BottomNavScreen(
                           index: 1,
                           newsData: NewsApi.aListNewsFootball,
+                          eventData: EventsApi.eListEvents,
                         ),
                         transition: Transition.fadeIn,
                       );
@@ -142,7 +144,10 @@ class _ChooseScreeState extends State<ChooseScree> {
                     onTap: () {
                       Get.to(
                         () => BottomNavScreen(
-                            index: 1, newsData: NewsApi.aListNewsBasketball),
+                          index: 1,
+                          newsData: NewsApi.aListNewsBasketball,
+                          eventData: EventsApi.eListEventsBasketball,
+                        ),
                         transition: Transition.fadeIn,
                       );
                     },
@@ -156,6 +161,7 @@ class _ChooseScreeState extends State<ChooseScree> {
                         () => BottomNavScreen(
                           index: 1,
                           newsData: NewsApi.aListNewsCricket,
+                          eventData: EventsApi.eventsCricket,
                         ),
                         transition: Transition.fadeIn,
                       );
@@ -170,6 +176,7 @@ class _ChooseScreeState extends State<ChooseScree> {
                         () => BottomNavScreen(
                           index: 1,
                           newsData: NewsApi.aListNewsVolleyball,
+                          eventData: EventsApi.eListEventsVolleyball,
                         ),
                         transition: Transition.fadeIn,
                       );
