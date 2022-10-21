@@ -18,6 +18,7 @@ class _BookingDetailsPageState extends State<BookingDetailsPage> {
       appBar: AppBar(
         title: Text("Al Maktoum Stadium"),
       ),
+      // app
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
