@@ -1,5 +1,6 @@
 import 'package:azul_football/api/events_api.dart';
 import 'package:azul_football/models/events.dart';
+import 'package:azul_football/models/leagues.dart';
 import 'package:azul_football/models/news.dart';
 import 'package:azul_football/models/product_model.dart';
 import 'package:azul_football/screens/home_pages/news.dart';
@@ -20,9 +21,15 @@ class BottomNavScreen extends StatefulWidget {
   final Widget screen;
   final List<NewsModel> newsData;
   final List<EventsModel> eventData;
+  final List<LeaguesModels> leagueData;
 
   BottomNavScreen(
-      {this.newsData, this.indexPage, this.screen, this.eventData, this.index});
+      {this.newsData,
+      this.indexPage,
+      this.leagueData,
+      this.screen,
+      this.eventData,
+      this.index});
 
   @override
   _BottomNavScreenState createState() => _BottomNavScreenState();
@@ -57,7 +64,7 @@ class _BottomNavScreenState extends State<BottomNavScreen>
       ),
       BookingPage(),
       ShopPage(),
-      EventsPage(),
+      EventsPage(eventsApi: widget.eventData, leagueData: widget.leagueData),
       FavoritesPage(),
       AccountPage(),
     ];

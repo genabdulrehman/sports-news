@@ -1,15 +1,25 @@
-import 'package:azul_football/api/events_api.dart';
-import 'package:azul_football/api/leagues_api.dart';
-import 'package:azul_football/helpers/constants.dart';
-import 'package:azul_football/screens/details/events_details.dart';
-import 'package:azul_football/widgets/trensations_widgets.dart';
-import 'package:azul_football/widgets/widget_calendar.dart';
-import 'package:azul_football/widgets/widgets_events.dart';
+import 'package:azul_football/models/leagues.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'package:azul_football/api/events_api.dart';
+import 'package:azul_football/api/leagues_api.dart';
+import 'package:azul_football/helpers/constants.dart';
+import 'package:azul_football/models/events.dart';
+import 'package:azul_football/screens/details/events_details.dart';
+import 'package:azul_football/widgets/trensations_widgets.dart';
+import 'package:azul_football/widgets/widget_calendar.dart';
+import 'package:azul_football/widgets/widgets_events.dart';
+
 class EventsPage extends StatefulWidget {
+  final List<EventsModel> eventsApi;
+  final List<LeaguesModels> leagueData;
+  const EventsPage({
+    Key key,
+    this.leagueData,
+    this.eventsApi,
+  }) : super(key: key);
   @override
   _EventsPageState createState() => _EventsPageState();
 }
@@ -30,27 +40,28 @@ class _EventsPageState extends State<EventsPage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           //TODO: Bar League
-          (indexgame == 0)
-              ? CardBarMain(
-                  isDropped: _barDrop,
-                  name: LeaguesApi.lLeaguesList[_selectedLeague].name,
-                  logo: LeaguesApi.lLeaguesList[_selectedLeague].logo,
-                  onTap: () {
-                    setState(() {
-                      _barDrop = !_barDrop;
-                    });
-                  },
-                )
-              : CardBarMain(
-                  isDropped: _barDrop,
-                  name: LeaguesApi.lLeaguesListBasketball[_selectedLeague].name,
-                  logo: LeaguesApi.lLeaguesListBasketball[_selectedLeague].logo,
-                  onTap: () {
-                    setState(() {
-                      _barDrop = !_barDrop;
-                    });
-                  },
-                ),
+          // (indexgame == 0)
+          //     ? CardBarMain(
+          //         isDropped: _barDrop,
+          //         name: widget.eventsApi[0].nameHome,
+          //         logo: LeaguesApi.lLeaguesList[_selectedLeague].logo,
+          //         onTap: () {
+          //           setState(() {
+          //             _barDrop = !_barDrop;
+          //           });
+          //         },
+          //       )
+          //     :
+          CardBarMain(
+            isDropped: _barDrop,
+            name: widget.leagueData[_selectedLeague].name,
+            logo: widget.leagueData[_selectedLeague].logo,
+            onTap: () {
+              setState(() {
+                _barDrop = !_barDrop;
+              });
+            },
+          ),
           //TODO: Bar List Leagues
           AnimatedContainer(
             width: mSize.size.width,
@@ -74,38 +85,39 @@ class _EventsPageState extends State<EventsPage> {
                     },
                   ),
                 ),
-                for (int i = 0; i < LeaguesApi.lLeaguesList.length; i++)
-                  (indexgame == 0)
-                      ? ShakeTransition(
-                          duration: Duration(milliseconds: (i + 5) * 300),
-                          axis: Axis.horizontal,
-                          child: CardChipLeague(
-                            image: LeaguesApi.lLeaguesList[i].logo,
-                            label: LeaguesApi.lLeaguesList[i].name,
-                            onTap: () {
-                              //TODO: selected League
-                              setState(() {
-                                _selectedLeague = i;
-                                _barDrop = false;
-                              });
-                            },
-                          ),
-                        )
-                      : ShakeTransition(
-                          duration: Duration(milliseconds: (i + 5) * 300),
-                          axis: Axis.horizontal,
-                          child: CardChipLeague(
-                            image: LeaguesApi.lLeaguesListBasketball[i].logo,
-                            label: LeaguesApi.lLeaguesListBasketball[i].name,
-                            onTap: () {
-                              //TODO: selected League
-                              setState(() {
-                                _selectedLeague = i;
-                                _barDrop = false;
-                              });
-                            },
-                          ),
-                        ),
+                for (int i = 0; i < widget.leagueData.length; i++)
+                  // (indexgame == 0)
+                  //     ? ShakeTransition(
+                  //         duration: Duration(milliseconds: (i + 5) * 300),
+                  //         axis: Axis.horizontal,
+                  //         child: CardChipLeague(
+                  //           image: widget.leagueData[i].logo,
+                  //           label: widget.leagueData[i].name,
+                  //           onTap: () {
+                  //             //TODO: selected League
+                  //             setState(() {
+                  //               _selectedLeague = i;
+                  //               _barDrop = false;
+                  //             });
+                  //           },
+                  //         ),
+                  //       )
+                  //     :
+                  ShakeTransition(
+                    duration: Duration(milliseconds: (i + 5) * 300),
+                    axis: Axis.horizontal,
+                    child: CardChipLeague(
+                      image: widget.leagueData[i].logo,
+                      label: widget.leagueData[i].name,
+                      onTap: () {
+                        //TODO: selected League
+                        setState(() {
+                          _selectedLeague = i;
+                          _barDrop = false;
+                        });
+                      },
+                    ),
+                  ),
               ],
             ),
           ),
@@ -139,21 +151,21 @@ class _EventsPageState extends State<EventsPage> {
             child: ListView(
               padding: EdgeInsets.symmetric(vertical: 0.0),
               children: [
-                for (int i = 0; i < EventsApi.eListEvents.length; i++)
+                for (int i = 0; i < widget.eventsApi.length; i++)
                   (indexgame == 0)
                       ? ShakeListTransition(
                           duration: Duration(milliseconds: (i + 3) * 200),
                           axis: Axis.vertical,
                           child: CardEventItemNew(
                             isSelected: i == _selectedPost,
-                            dateMatch: EventsApi.eListEvents[i].dateMatch,
-                            timeMatch: EventsApi.eListEvents[i].timeMatch,
-                            nameHome: EventsApi.eListEvents[i].nameHome,
-                            nameAway: EventsApi.eListEvents[i].nameAway,
-                            logoHome: EventsApi.eListEvents[i].logoHome,
-                            logoAway: EventsApi.eListEvents[i].logoAway,
-                            scoreAway: EventsApi.eListEvents[i].scoreAway,
-                            scoreHome: EventsApi.eListEvents[i].scoreHome,
+                            dateMatch: widget.eventsApi[i].dateMatch,
+                            timeMatch: widget.eventsApi[i].timeMatch,
+                            nameHome: widget.eventsApi[i].nameHome,
+                            nameAway: widget.eventsApi[i].nameAway,
+                            logoHome: widget.eventsApi[i].logoHome,
+                            logoAway: widget.eventsApi[i].logoAway,
+                            scoreAway: widget.eventsApi[i].scoreAway,
+                            scoreHome: widget.eventsApi[i].scoreHome,
                             onTap: () {
                               Get.to(
                                 () => EventDetails(
@@ -174,22 +186,14 @@ class _EventsPageState extends State<EventsPage> {
                           axis: Axis.vertical,
                           child: CardEventItemNew(
                             isSelected: i == _selectedPost,
-                            dateMatch:
-                                EventsApi.eListEventsBasketball[i].dateMatch,
-                            timeMatch:
-                                EventsApi.eListEventsBasketball[i].timeMatch,
-                            nameHome:
-                                EventsApi.eListEventsBasketball[i].nameHome,
-                            nameAway:
-                                EventsApi.eListEventsBasketball[i].nameAway,
-                            logoHome:
-                                EventsApi.eListEventsBasketball[i].logoHome,
-                            logoAway:
-                                EventsApi.eListEventsBasketball[i].logoAway,
-                            scoreAway:
-                                EventsApi.eListEventsBasketball[i].scoreAway,
-                            scoreHome:
-                                EventsApi.eListEventsBasketball[i].scoreHome,
+                            dateMatch: widget.eventsApi[i].dateMatch,
+                            timeMatch: widget.eventsApi[i].timeMatch,
+                            nameHome: widget.eventsApi[i].nameHome,
+                            nameAway: widget.eventsApi[i].nameAway,
+                            logoHome: widget.eventsApi[i].logoHome,
+                            logoAway: widget.eventsApi[i].logoAway,
+                            scoreAway: widget.eventsApi[i].scoreAway,
+                            scoreHome: widget.eventsApi[i].scoreHome,
                             onTap: () {
                               Get.to(
                                 () => EventDetails(

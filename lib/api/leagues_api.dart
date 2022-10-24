@@ -28,6 +28,60 @@ class LeaguesApi {
       logo: 'assets/images/leagues/bundesliga.png',
     ),
   ];
+  static List<LeaguesModels> cricketList = [
+    LeaguesModels(
+      id: 0,
+      name: 'Pakistan Super League',
+      logo: 'assets/teams/psl.png',
+    ),
+    LeaguesModels(
+      id: 1,
+      name: 'Indian Premier League',
+      logo: 'assets/teams/india2.webp',
+    ),
+    LeaguesModels(
+      id: 2,
+      name: 'Bangladesh Premier League',
+      logo: 'assets/teams/ban.png',
+    ),
+    LeaguesModels(
+      id: 3,
+      name: 'UAE league',
+      logo: 'assets/teams/new2.png',
+    ),
+    LeaguesModels(
+      id: 4,
+      name: 'Austrailian Super League',
+      logo: 'assets/teams/aust.png',
+    ),
+  ];
+  static List<LeaguesModels> volleyballList = [
+    LeaguesModels(
+      id: 0,
+      name: 'Volleyball Super League',
+      logo: 'assets/teams/v1.png',
+    ),
+    LeaguesModels(
+      id: 1,
+      name: 'Volleyball Premier League',
+      logo: 'assets/teams/v2.png',
+    ),
+    LeaguesModels(
+      id: 2,
+      name: 'Bangladesh Premier League',
+      logo: 'assets/teams/v3.png',
+    ),
+    LeaguesModels(
+      id: 3,
+      name: 'Voll league',
+      logo: 'assets/teams/v4.png',
+    ),
+    LeaguesModels(
+      id: 4,
+      name: 'Challengers Super League',
+      logo: 'assets/teams/v2.png',
+    ),
+  ];
   static List<LeaguesModels> lLeaguesListBasketball = [
     LeaguesModels(
       id: 0,

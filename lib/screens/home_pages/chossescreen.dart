@@ -1,5 +1,6 @@
 import 'package:azul_football/api/booking_api.dart';
 import 'package:azul_football/api/events_api.dart';
+import 'package:azul_football/api/leagues_api.dart';
 import 'package:azul_football/api/news_api.dart';
 import 'package:azul_football/helpers/colors.dart';
 import 'package:azul_football/screens/home_pages/widgets/booking_card_widget.dart';
@@ -132,6 +133,7 @@ class _ChooseScreeState extends State<ChooseScree> {
                           index: 1,
                           newsData: NewsApi.aListNewsFootball,
                           eventData: EventsApi.eListEvents,
+                          leagueData: LeaguesApi.lLeaguesList,
                         ),
                         transition: Transition.fadeIn,
                       );
@@ -144,10 +146,10 @@ class _ChooseScreeState extends State<ChooseScree> {
                     onTap: () {
                       Get.to(
                         () => BottomNavScreen(
-                          index: 1,
-                          newsData: NewsApi.aListNewsBasketball,
-                          eventData: EventsApi.eListEventsBasketball,
-                        ),
+                            index: 1,
+                            newsData: NewsApi.aListNewsBasketball,
+                            eventData: EventsApi.eListEventsBasketball,
+                            leagueData: LeaguesApi.lLeaguesListBasketball),
                         transition: Transition.fadeIn,
                       );
                     },
@@ -162,6 +164,7 @@ class _ChooseScreeState extends State<ChooseScree> {
                           index: 1,
                           newsData: NewsApi.aListNewsCricket,
                           eventData: EventsApi.eventsCricket,
+                          leagueData: LeaguesApi.cricketList,
                         ),
                         transition: Transition.fadeIn,
                       );
@@ -174,10 +177,10 @@ class _ChooseScreeState extends State<ChooseScree> {
                     onTap: () {
                       Get.to(
                         () => BottomNavScreen(
-                          index: 1,
-                          newsData: NewsApi.aListNewsVolleyball,
-                          eventData: EventsApi.eListEventsVolleyball,
-                        ),
+                            index: 1,
+                            newsData: NewsApi.aListNewsVolleyball,
+                            eventData: EventsApi.eListEventsVolleyball,
+                            leagueData: LeaguesApi.volleyballList),
                         transition: Transition.fadeIn,
                       );
                     },
